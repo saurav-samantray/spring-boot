@@ -2,93 +2,65 @@ package com.nlp.restservice.processor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.nlp.restservice.pojo.response.Entity;
-import com.nlp.restservice.pojo.response.Response;
+import com.nlp.restservice.pojo.response.es.Response;
 
-import edu.stanford.nlp.ie.crf.CRFClassifier;
-import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.util.CoreMap;
+import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.CoreEntityMention;
+import edu.stanford.nlp.pipeline.CoreSentence;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
 @Service
 public class NERProcessor {
+	
+	private static List ENTITY_FILTER = Arrays.asList("MONEY".split(" "));
+	
+	private static String ES_ENTITY_MAPPER = "{'CAPACITY':'size'}";
 
-	public Response processRequest(CRFClassifier<CoreMap> classifier, CRFClassifier<CoreMap> defaultClassifier,String text) {
-		Response res = new Response();
-		List<Entity> rawCustomEntities = null;
-		List<Entity> rawDefaultEntities = null;
-		List<Entity> groupedEntities = new ArrayList<>();
-
-
-		String dNerString = defaultClassifier.classifyToString(text,"slashTags",false);
-
-		String nerString = classifier.classifyToString(text);
-
-		rawCustomEntities =  Arrays.stream(nerString.split(" "))
-				.map(x -> new Entity(x.split("/")[0],x.split("/")[1]))
-				.collect(Collectors.toList());
+	public Response processRequest(StanfordCoreNLP pipeline,String text) {
+		boolean productExists = false;
+		
+		Response esResponse = new Response();
 
 		
-		
-		Entity aggregator = null;
-		String prevType = null;
-		rawDefaultEntities =  Arrays.stream(dNerString.trim().split(" "))
-				.map(x -> new Entity(x.split("/")[0],x.split("/")[1]))
-				.collect(Collectors.toList());
+		CoreDocument document = new CoreDocument(text);
 
-
-		
-		for(Entity ent : rawCustomEntities) {
-			if(!ent.getType().equalsIgnoreCase("O")) {
-				if(aggregator == null) {
-					aggregator = new Entity();
-					aggregator.setText(ent.getText());
-					aggregator.setType(ent.getType());
-					prevType = ent.getType();
-				}else if(prevType.equalsIgnoreCase(ent.getType())) {
-					aggregator.setText(aggregator.getText()+" "+ent.getText());
-					aggregator.setType(ent.getType());
-				}else {
-					groupedEntities.add(aggregator);
-					aggregator = new Entity();
-					aggregator.setText(ent.getText());
-					aggregator.setType(ent.getType());
-					prevType = ent.getType();
-				}
-			}
-		}
-
-		aggregator = null;
-		prevType = null;
-		for(Entity ent : rawDefaultEntities) {
-			if(!Arrays.asList("O ORGANIZATION".split(" ")).contains(ent.getType())) {
-				if(aggregator == null) {
-					aggregator = new Entity();
-					aggregator.setText(ent.getText());
-					aggregator.setType(ent.getType());
-					prevType = ent.getType();
-				}else if(prevType.equalsIgnoreCase(ent.getType())) {
-					aggregator.setText(aggregator.getText()+" "+ent.getText());
-					aggregator.setType(ent.getType());
-				}else {
-					groupedEntities.add(aggregator);
-					aggregator = new Entity();
-					aggregator.setText(ent.getText());
-					aggregator.setType(ent.getType());
-					prevType = ent.getType();
-				}
-			}
-		}
-		//System.out.println(classifier.classifyToString(text));
-		res.setEntities(groupedEntities);
-		//res.setEntities(rawEntities);
-
-		return res;
+	    pipeline.annotate(document);
+	    CoreSentence sentence = document.sentences().get(0);
+	    
+	    
+	    List<CoreEntityMention> entityMentions = sentence.entityMentions();
+	    //System.out.println("Example: entity mentions");
+	    for(CoreEntityMention e : entityMentions) {
+	    	//System.out.println(e.text()+"/"+e.entityType()+" , ");
+	    	if(ENTITY_FILTER.contains(e.entityType())) {
+	    		continue;
+	    	}
+	    	else if("PRODUCT".equalsIgnoreCase(e.entityType())) {
+	    		Map<String,Map<String,String>> queryString = new HashMap<String, Map<String,String>>();
+	    		Map<String,String> query = new HashMap<String, String>();
+	    		query.put("query", e.text());
+	    		queryString.put("query_string", query);
+	    		esResponse.getEs_input().getQuery().getBool().getMust().add(queryString);
+	    	}else {
+	    		Map<String,Map<String,String>> term = new HashMap<String, Map<String,String>>();
+	    		Map<String,String> field = new HashMap<String, String>();
+	    		field.put(e.entityType().toLowerCase(), e.text());
+	    		term.put("term", field);
+	    		esResponse.getEs_input().getQuery().getBool().getFilter().add(term);
+	    	}
+	    }
+	    //System.out.println(entityMentions);
+	   // System.out.println();
+	    
+	    
+	    esResponse.setSuccess(true);
+		return esResponse;
 	}
 
 }

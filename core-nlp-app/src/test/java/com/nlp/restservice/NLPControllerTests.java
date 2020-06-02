@@ -29,7 +29,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class NERControllerTests {
+public class NLPControllerTests {
 
 	@Autowired
 	private MockMvc mockMvc;
