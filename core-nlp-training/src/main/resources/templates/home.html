@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>CoreNLP | Training Home</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Core NLP</div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light">Trainings</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+      	<div class="row p-2">
+					
+					<div id="trainingToast" role="alert" aria-live="assertive" aria-atomic="true" class="toast" style="position: absolute; top: 50px; right: 10px; background-color: #00FF80; ">
+					  <div class="toast-body">
+						
+						<span id="new-success">Hello, world! This is a toast message.</span>
+						<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+					  </div>
+					</div>
+					
+				</div>
+      	<div class="row p-2 border">
+			<div class="col">
+				<div class="row">
+					<h2 class="">New Training</h2>
+				</div>
+				<div class="row">
+				<form id="new-training-form" action="">
+				  <div class="form-row align-items-center">
+					<div class="col-auto">
+					  <label class="sr-only" for="inlineFormInput">Model Name</label>
+					  <div class="input-group mb-2">
+						<div class="input-group-prepend">
+						  <div class="input-group-text">Model Name</div>
+						</div>
+						<input type="text" class="form-control" id="model_name" value="ner-model-beauty.ser.gz">
+					  </div>
+					</div>
+					<div class="col-auto">
+					  <label class="sr-only" for="inlineFormInputGroup">tolerance</label>
+					  <div class="input-group mb-2">
+						<div class="input-group-prepend">
+						  <div class="input-group-text">tolerance</div>
+						</div>
+						<input type="text" class="form-control" id="tolerance" value="0.5">
+					  </div>
+					</div>
+					<div class="col-auto">
+					  <label class="sr-only" for="inlineFormInputGroup">Training File</label>
+					  <div class="input-group mb-2">
+						<div class="input-group-prepend">
+						  <div class="input-group-text">Training File</div>
+						</div>
+						<input type="text" class="form-control" id="train_file" value="corenlp_input.txt">
+					  </div>
+					</div>
+					
+					<div class="col-auto">
+					  <button id="new-training" type="button" class="btn btn-primary mb-2">Execute</button>
+					</div>
+				  </div>
+				</form>
+				</div>
+			</div>
+			<!--<div class="col">
+				<button style="" id="new-training" type="button" class="btn btn-primary">execute</button>
+			</div>-->
+		</div>
+		
+      	<div class="row p-2 border">
+			<div class="col ml-2">
+				<div class="row">
+					<h2 class="mt-4">Training History (Last 5)</h2>
+				</div>
+				<div class="row">
+					<table class="table table-striped">
+						<thead>
+						  <tr>
+							<th>Job Id</th>
+							<th>Status</th>
+							<th></th>
+						  </tr>
+						</thead>
+						<tbody id="job-history">
+							<tr
+								th:id = "${'job_'+item.execution_id}"
+							  th:each="item, iStat : ${items}">
+								<td th:text="${item.execution_id}" />
+								<td th:id = "${'status_'+item.execution_id}" th:text="${item.job_status}" />
+								<td><button style="" th:attr="data-value=${item.execution_id}" th:id="${'refresh_'+item.execution_id}" type="button" class="btn btn-primary jobrefresh">refresh</button></td>
+							</tr>						
+						</tbody>
+					</table>
+				
+
+				</div>
+			</div>
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+	//$('.toast').toast('hide');
+	//$('#new-success').hide();
+    $(".jobrefresh").click(function(e) {		
+      $.ajax({
+			url: '/training/ner/'+$(this).data("value"),
+			type: 'GET',
+			contentType: "application/json",
+			success: function(response){
+				//var returnedData = JSON.parse(response);
+				console.log(response);
+				setTimeout(function () {
+					console.log('#status_'+response.jobDetail.execution_id);
+					console.log(response.jobDetail.job_status);
+					$('#status_'+response.jobDetail.execution_id).html(response.jobDetail.job_status)
+				}, 10);
+				
+				
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+    });
+	
+	$("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+    
+    
+    $(function(){
+	$('#new-training').click(function(){
+		$('#new-training').html("<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>");
+		var tolerance = $('#tolerance').val();
+		var model_name = $('#model_name').val();
+		var train_file = $('#train_file').val();
+		
+		$.ajax({
+			url: '/training/ner',
+			data: "{\"tolerance\":"+tolerance+",\"model_name\":\""+model_name+"\",\"train_file\":\""+train_file+"\"}",
+			type: 'POST',
+			dataType: "json",
+			contentType: "application/json",
+			success: function(response){
+				//var returnedData = JSON.parse(response);
+				console.log(response);
+				setTimeout(function () {
+					$('#new-training').html("execute")
+					$('#new-success').html("Success! Training Job Id:"+response.jobDetail.execution_id+" created");
+					$('#trainingToast').toast({ delay: 10000 });
+					$('#trainingToast').toast('show');
+				}, 10);
+				
+				
+			},
+			error: function(error){
+				$('#new-training').html("execute");
+				$('#new-success').html("<strong>Failed!</strong> Could not initiate training");
+					//$("#new-success").removeClass("alert-success");
+					//$("#new-success").addClass("alert-error");
+					$('#trainingToast').toast({ delay: 10000 });
+					$('#trainingToast').toast('show');
+				console.log(error);
+			}
+		});
+	});
+});
+  </script>
+
+</body>
+
+</html>

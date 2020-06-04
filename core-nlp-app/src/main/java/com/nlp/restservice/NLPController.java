@@ -31,11 +31,11 @@ public class NLPController {
 
 	Logger logger = LoggerFactory.getLogger(NLPController.class);
 	
-	private CRFClassifier classifier = CRFClassifier.getClassifierNoExceptions("ner-model-beauty.ser.gz");
+	//private CRFClassifier classifier = CRFClassifier.getClassifierNoExceptions("ner-model-beauty.ser.gz");
 
 	//private NERClassifierCombiner defaultClassifier = NERClassifierCombiner.createNERClassifierCombiner("ner",null, StringUtils.propFileToProperties("D:/workspace/java/nlp/corenlp-springboot/target/classes/com/nlp/restservice/english.properties"));
 
-	private CRFClassifier<CoreMap> defaultClassifier = CRFClassifier.getClassifierNoExceptions("english.muc.7class.distsim.crf.ser.gz");
+	//private CRFClassifier<CoreMap> defaultClassifier = CRFClassifier.getClassifierNoExceptions("english.muc.7class.distsim.crf.ser.gz");
 
 	//private Properties prop = new Properties(new FileReader("db.properties"));
 
@@ -59,10 +59,12 @@ public class NLPController {
 		return  "Hello! Welcome to NLP";
 	}
 	
+	
 	@PostMapping("/sentiment")
 	public Map sentimentAnalysis(@RequestBody Request request) {
 		return sp.processRequest(sentimentPipeline, request.getText());
 	}
+	
 
 
 	@PostMapping("/ner")
@@ -71,23 +73,27 @@ public class NLPController {
 		return nerp.processRequest(nerPipeline, request.getText());
 	}
 
+	/*
 	@PostMapping("/fast-ner")
 	Response processFastNER(@RequestBody Request request) {
 
 		return nerfp.processRequest(classifier, defaultClassifier, request.getText());
 	}
+	*/
 	
 
 	private Properties getProps(String fileName) {
 		Properties prop = new Properties();
-		try (InputStream input = this.getClass().getResourceAsStream(fileName);) {
-			// load a properties file
-			logger.info("Loading english.properties file");
-			prop.load(input);
-
-		} catch (IOException ex) {
-			ex.printStackTrace();
+		
+		InputStream inputStream = getClass()
+				.getClassLoader().getResourceAsStream(fileName);
+		try {
+			prop.load(inputStream);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
 		return prop;
 	}
 }
