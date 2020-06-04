@@ -33,7 +33,8 @@ public class TrainingViewController {
 			item.setJob_status(jobExplorer.getJobExecution(ji.getInstanceId()).getStatus().toString());
 			items.add(item);
 		}
-		items.sort(Comparator.comparing(JobDetail::getExecution_id));
+		
+		//items.sort(Comparator.comparing(JobDetail::getExecution_id));
 		
 		model.addAttribute("items", items);
 		return "home";
