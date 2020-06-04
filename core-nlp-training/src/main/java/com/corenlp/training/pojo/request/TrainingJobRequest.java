@@ -1,5 +1,7 @@
 package com.corenlp.training.pojo.request;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class TrainingJobRequest {
 
 	private double tolerance;
@@ -7,6 +9,16 @@ public class TrainingJobRequest {
 	private String model_name;
 	
 	private String train_file;
+	
+	private MultipartFile[] files;
+	
+	public MultipartFile[] getFiles() {
+		return files;
+	}
+
+	public void setFiles(MultipartFile[] files) {
+		this.files = files;
+	}
 
 	public double getTolerance() {
 		return tolerance;

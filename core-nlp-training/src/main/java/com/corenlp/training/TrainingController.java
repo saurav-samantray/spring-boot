@@ -1,13 +1,12 @@
 package com.corenlp.training;
 
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -26,13 +25,13 @@ import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteExcep
 import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.corenlp.training.pojo.request.TrainingJobRequest;
 import com.corenlp.training.pojo.response.DetailResponse;
@@ -43,6 +42,8 @@ import com.corenlp.training.pojo.response.ListResponse;
 @RestController
 @RequestMapping("training")
 public class TrainingController {
+	
+	private static String UPLOAD_DIR="tmp";
 	
 	Logger logger = LoggerFactory.getLogger(TrainingController.class);
 	
@@ -57,17 +58,26 @@ public class TrainingController {
 	JobExplorer jobExplorer;
 
 	@PostMapping("ner")
-	public DetailResponse nerTraining(@RequestBody TrainingJobRequest requestBody) {
+	public DetailResponse nerTraining(@ModelAttribute TrainingJobRequest requestBody) {
 		JobDetail jobDetail = new JobDetail();
 		DetailResponse dr = new DetailResponse();
-		
-		JobParameters jobParameters = new JobParametersBuilder()
-											.addLong("time", System.currentTimeMillis())
-											.addDouble("tolerance", requestBody.getTolerance())
-											.addString("train_file", requestBody.getTrain_file())
-											.addString("model_name", requestBody.getModel_name())
-											.toJobParameters();
+			
         try {
+        	//upload training file to temp folder
+    		String uploadFilePath = saveUploadedFiles(requestBody.getFiles());
+    		if(uploadFilePath == null) {
+    			dr.setErrorMessage("File not found or not provided");
+    			dr.setSuccess(false);
+    			return dr;
+    		}
+        	
+        	JobParameters jobParameters = new JobParametersBuilder()
+					.addLong("time", System.currentTimeMillis())
+					.addDouble("tolerance", requestBody.getTolerance())
+					.addString("train_file",uploadFilePath)
+					.addString("model_name", requestBody.getModel_name())
+					.toJobParameters();
+        	
 			JobExecution je = jobLauncher.run(nerTrainingJob, jobParameters);
 			
 			jobDetail.setExecution_id(je.getId());
@@ -76,6 +86,11 @@ public class TrainingController {
 		} catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException
 				| JobParametersInvalidException e) {
 			logger.error(e.getMessage());
+			dr.setErrorMessage(e.getMessage());
+			dr.setSuccess(false);
+		} catch (IOException e) {
+			logger.error(e.getMessage());
+			dr.setErrorMessage(e.getMessage());
 			dr.setSuccess(false);
 		}
 		return dr;
@@ -99,31 +114,6 @@ public class TrainingController {
 	
 	@GetMapping("ner/{id}/download")
 	public String download(@PathVariable("id") long executionId,HttpServletResponse response) {
-		
-		/*
-		//setting headers
-        response.setContentType("application/zip");
-        response.setStatus(HttpServletResponse.SC_OK);
-        response.addHeader("Content-Disposition", "attachment; filename=\"ner-model-beauty.ser.gz\"");
-        
-        //creating byteArray stream, make it bufforable and passing this buffor to ZipOutputStream
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(byteArrayOutputStream);
-        ZipOutputStream zipOutputStream = new ZipOutputStream(bufferedOutputStream);
-        
-        File file = new File("ner-model-beauty.ser.gz");
-        try {
-        zipOutputStream.putNextEntry(new ZipEntry(file.getName()));
-        FileInputStream fileInputStream = new FileInputStream(file);
-
-        StreamUtils.copy(fileInputStream, zipOutputStream);
-
-        fileInputStream.close();
-        zipOutputStream.closeEntry();
-        }catch (Exception e) {
-			e.printStackTrace();
-		}
-		*/
 		
 		return "http://192.168.1.199/ner/1/ner-model-beauty.ser.gz";
 		
@@ -152,5 +142,31 @@ public class TrainingController {
 		 */
 		return response;
 	}
+	
+	// Save Files
+    private String saveUploadedFiles(MultipartFile[] files) throws IOException {
+ 
+        // Make sure directory exists!
+        File uploadDir = new File(UPLOAD_DIR);
+        uploadDir.mkdirs();
+ 
+        
+        String uploadFilePath = null;
+ 
+        for (MultipartFile file : files) {
+ 
+            if (file.isEmpty()) {
+                return null;
+            }
+            uploadFilePath = UPLOAD_DIR + "/" + file.getOriginalFilename();
+ 
+            byte[] bytes = file.getBytes();
+            Path path = Paths.get(uploadFilePath);
+            Files.write(path, bytes);
+            
+ 
+        }
+        return uploadFilePath;
+    }
 	
 }

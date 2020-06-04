@@ -42,12 +42,24 @@ public class NERTrainingTask implements Tasklet{
 				      .getJobParameters().getString("model_name"));
 		   props.setProperty("trainFile", chunkContext.getStepContext().getStepExecution()
 				      .getJobParameters().getString("train_file"));
+		   
+		   //Setting the temp train_file in Execution context for deleting it later
+		   chunkContext
+		   	.getStepContext()
+		   	.getStepExecution()
+		   	.getJobExecution()
+		   	.getExecutionContext()
+		   	.put("train_file", chunkContext.getStepContext().getStepExecution()
+				      .getJobParameters().getString("train_file"));
+		   
+		   
 		   logger.info("Tolerance after: "+props.getProperty("tolerance"));
 		   String modelOutPath = props.getProperty("serializeTo");
 		   SeqClassifierFlags flags = new SeqClassifierFlags(props);
 		   CRFClassifier<CoreLabel> crf = new CRFClassifier<>(flags);
 		   crf.train();
 		   crf.serializeClassifier(modelOutPath);
+		   
 		}
 
 	@Override
