@@ -8,6 +8,8 @@ $( document ).ready(function() {
 
 
 	$("#new-training").click(function (e) {
+		var s = '<div class="overlay spinner-grow text-primary spinner-grow-lg mt-2"><span class="sr-only">Loading...</span></div>';
+		$( '.table-responsive' ).find( 'tbody' ).append( '<div class="overlay-spinner text-center">' + s + '</div>' );
 		setTimeout(function () {
 			$.ajax({
 				url: '/training/ner',
@@ -16,15 +18,20 @@ $( document ).ready(function() {
 				success: function (response) {
 					//var returnedData = JSON.parse(response);
 					console.log(response);
-
+					
 					var history_update = "";
 					$.each(response.jobDetails, function (i, value) {
 						console.log(i + " : " + value['execution_id'] + ": " + value['job_status']);
+						var disabled = "";
+						if(value['job_status'] === "COMPLETED"){
+							disabled = "disabled"
+						}
 						history_update = history_update +
 						"<tr id='job_" + value['execution_id'] + "'>" +
 						"<td>" + value['execution_id'] + "</td>" +
+						"<td>NER</td>"+
 						"<td id='status_" + value['execution_id'] + "'>" + value['job_status'] + "</td>" +
-						"<td><button id='refresh_" + value['execution_id'] + "' type='button' class='btn btn-primary jobrefresh' data-value=" + value['execution_id'] + ">refresh</button></td>" +
+						"<td><button "+disabled+" id='refresh_" + value['execution_id'] + "' type='button' class='btn btn-primary jobrefresh' data-value=" + value['execution_id'] + ">refresh</button></td>" +
 						"<td><button id='download_" + value['execution_id'] + "' type='button' class='btn btn-primary download' data-value=" + value['execution_id'] + ">download</button></td>" +
 						"</tr>"
 					});
@@ -76,7 +83,7 @@ $( document ).ready(function() {
 					console.log(response);
 					setTimeout(function () {
 						$('#new-training').html("execute")
-						$('#trainingToast').css("background-color","#00FF80");
+						$('#trainingToast').css("background-color","#40CB94");
 						$('#toast-message').html("Success! Training Job Id:" + response.jobDetail.execution_id + " created");
 						$('#trainingToast').toast({
 							delay: 10000
@@ -89,7 +96,7 @@ $( document ).ready(function() {
 				error: function (xhr, status, error) {
 					errResponse =  JSON.parse(xhr.responseText)
 					$('#new-training').html("execute");
-					$('#trainingToast').css("background-color","#FDAB9F");
+					$('#trainingToast').css("background-color","#FDDCDC");
 					$('#toast-message').html("<strong>Failed!</strong> "+errResponse.errorMessage);
 					//$("#new-success").removeClass("alert-success");
 					//$("#new-success").addClass("alert-error");

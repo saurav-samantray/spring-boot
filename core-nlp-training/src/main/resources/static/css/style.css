@@ -1,0 +1,64 @@
+@charset "ISO-8859-1";
+
+body {
+	font-family: "Open Sans", sans-serif;
+	color: #444444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Jost", sans-serif;
+	color: #37517e;
+}
+
+th, td {
+	/* color:#37517e; */
+	/* font-size:2vw; */
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+	transition: all 0.5s;
+	z-index: 997;
+	padding: 15px 0;
+	background: rgba(40, 58, 90, 0.9);
+}
+
+#header.header-scrolled, #header.header-inner-pages {
+	background: rgba(40, 58, 90, 0.9);
+}
+
+#header .logo {
+	font-size: 30px;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+#header .logo a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#trainingToast {
+	position: absolute;
+	top: 50px;
+	right: 10px;
+	background-color: #00FF80;
+	z-index: 998;
+}
+
+.overlay-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1rem;
+  margin-left: -1rem;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0);
+  /*dim the background*/
+}

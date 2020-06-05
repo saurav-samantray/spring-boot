@@ -43,44 +43,49 @@ import com.corenlp.training.pojo.response.ListResponse;
 @RestController
 @RequestMapping("training")
 public class TrainingController {
-	
+
 	private static String UPLOAD_DIR="tmp";
-	
+
 	Logger logger = LoggerFactory.getLogger(TrainingController.class);
-	
+
 	@Autowired
-    Job nerTrainingJob;
-	
+	Job nerTrainingJob;
+
 	@Autowired
 	@Qualifier("trainingJobLauncher")
-    JobLauncher jobLauncher;
-	
+	JobLauncher jobLauncher;
+
 	@Autowired
 	JobExplorer jobExplorer;
 
 	@PostMapping("ner")
-	public DetailResponse nerTraining(@ModelAttribute TrainingJobRequest requestBody) throws FileNotFoundException, IOException {
+	public DetailResponse nerTraining(@ModelAttribute TrainingJobRequest requestBody) throws FileNotFoundException,
+	IOException,
+	JobExecutionAlreadyRunningException,
+	JobRestartException,
+	JobInstanceAlreadyCompleteException,
+	JobParametersInvalidException{
 		JobDetail jobDetail = new JobDetail();
 		DetailResponse dr = new DetailResponse();
-			
-        try {
-        	//upload training file to temp folder
-    		String uploadFilePath = saveUploadedFiles(requestBody.getFiles());
-    		if(uploadFilePath == null) {
-    			dr.setErrorMessage("File not found or not provided");
-    			dr.setSuccess(false);
-    			return dr;
-    		}
-        	
-        	JobParameters jobParameters = new JobParametersBuilder()
+
+		try {
+			//upload training file to temp folder
+			String uploadFilePath = saveUploadedFiles(requestBody.getFiles());
+			if(uploadFilePath == null) {
+				dr.setErrorMessage("File not found or not provided");
+				dr.setSuccess(false);
+				return dr;
+			}
+
+			JobParameters jobParameters = new JobParametersBuilder()
 					.addLong("time", System.currentTimeMillis())
 					.addDouble("tolerance", requestBody.getTolerance())
 					.addString("train_file",uploadFilePath)
 					.addString("model_name", requestBody.getModel_name())
 					.toJobParameters();
-        	
+
 			JobExecution je = jobLauncher.run(nerTrainingJob, jobParameters);
-			
+
 			jobDetail.setExecution_id(je.getId());
 			jobDetail.setJob_status(je.getStatus().toString());
 			dr.setJobDetail(jobDetail);
@@ -89,19 +94,16 @@ public class TrainingController {
 			logger.error(e.getMessage());
 			dr.setErrorMessage(e.getMessage());
 			dr.setSuccess(false);
-		} /*
-			 * catch (IOException e) { logger.error(e.getMessage());
-			 * dr.setErrorMessage(e.getMessage()); dr.setSuccess(false); }
-			 */
+		}
 		return dr;
 	}
-	
+
 	@GetMapping("ner/{id}")
 	public DetailResponse nerTrainingDetails(@PathVariable("id") long executionId) {
 		JobDetail jobDetail = new JobDetail();
 		DetailResponse dr = new DetailResponse();
 		JobExecution je = jobExplorer.getJobExecution(executionId);
-		
+
 		if(null != je) {
 			jobDetail.setExecution_id(je.getId());
 			jobDetail.setJob_status(je.getStatus().toString());
@@ -111,24 +113,24 @@ public class TrainingController {
 		}
 		return dr;
 	}
-	
+
 	@GetMapping("ner/{id}/download")
 	public String download(@PathVariable("id") long executionId,HttpServletResponse response) {
-		
+
 		return "http://192.168.1.199/ner/1/ner-model-beauty.ser.gz";
-		
-        //return byteArrayOutputStream.toByteArray();
+
+		//return byteArrayOutputStream.toByteArray();
 	}
-	
+
 	@GetMapping("ner")
 	public ListResponse nerTrainings() {
 		JobDetail item = null;
 		List<JobDetail> items= new ArrayList<>();
 		ListResponse response = new ListResponse();
 		List<JobInstance> jobInstances = jobExplorer.getJobInstances("nerTrainingJob", 0, 5);
-		
-		logger.info(jobExplorer.getJobNames().toString());
-		
+
+		//logger.info(jobExplorer.getJobNames().toString());
+
 		for(JobInstance ji : jobInstances) {
 			item = new JobDetail();
 			item.setExecution_id(ji.getInstanceId());
@@ -142,31 +144,31 @@ public class TrainingController {
 		 */
 		return response;
 	}
-	
+
 	// Save Files
-    private String saveUploadedFiles(MultipartFile[] files) throws FileNotFoundException, IOException {
- 
-        // Make sure directory exists!
-        File uploadDir = new File(UPLOAD_DIR);
-        uploadDir.mkdirs();
- 
-        
-        String uploadFilePath = null;
- 
-        for (MultipartFile file : files) {
- 
-            if (file.isEmpty()) {
-                throw new FileNotFoundException();
-            }
-            uploadFilePath = UPLOAD_DIR + "/" + file.getOriginalFilename();
- 
-            byte[] bytes = file.getBytes();
-            Path path = Paths.get(uploadFilePath);
-            Files.write(path, bytes);
-            
- 
-        }
-        return uploadFilePath;
-    }
-	
+	private String saveUploadedFiles(MultipartFile[] files) throws FileNotFoundException, IOException {
+
+		// Make sure directory exists!
+		File uploadDir = new File(UPLOAD_DIR);
+		uploadDir.mkdirs();
+
+
+		String uploadFilePath = null;
+
+		for (MultipartFile file : files) {
+
+			if (file.isEmpty()) {
+				throw new FileNotFoundException();
+			}
+			uploadFilePath = UPLOAD_DIR + "/" + file.getOriginalFilename();
+
+			byte[] bytes = file.getBytes();
+			Path path = Paths.get(uploadFilePath);
+			Files.write(path, bytes);
+
+
+		}
+		return uploadFilePath;
+	}
+
 }

@@ -6,24 +6,41 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <title>CoreNLP | Training Home</title>
+      
+      <!-- Google Fonts -->
+  	  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      
       <!-- Bootstrap core CSS -->
       <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
       <!-- Custom styles for this template -->
       <link href="css/simple-sidebar.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      
+      
    </head>
    <body>
       <div class="d-flex" id="wrapper">
          <!-- Sidebar -->
-         <div class="bg-light border-right" id="sidebar-wrapper">
+        <!--  <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">Core NLP</div>
             <div class="list-group list-group-flush">
                <a href="#" class="list-group-item list-group-item-action bg-light">Trainings</a>
             </div>
-         </div>
+         </div> -->
          <!-- /#sidebar-wrapper -->
          <!-- Page Content -->
          <div id="page-content-wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+		  <!-- ======= Header ======= -->
+		  <header id="header" class="fixed-top ">
+		    <div class="container d-flex align-items-center">
+		      <!-- <a href="index.html" class="logo mr-auto"><img src="{{ url_for('static', filename='images/ml-upakaranna.png') }}" alt="" class="img-fluid"></a> -->
+		      <h1 class="logo m-auto"><a href="/">CoreNLP Dashboard</a></h1>
+		
+		    </div>
+		  </header><!-- End Header -->
+         	
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -49,20 +66,18 @@
                      </li>
                   </ul>
                </div>
-            </nav>
-            <div class="container-fluid">
-               <div class="row p-2">
-                  <div id="trainingToast" role="alert" aria-live="assertive" aria-atomic="true" class="toast" style="position: absolute; top: 50px; right: 10px; background-color: #00FF80; ">
+            </nav> -->
+            <div class="container-fluid mt-5">
+                  <div id="trainingToast" role="alert" aria-live="assertive" aria-atomic="true" class="toast">
                      <div class="toast-body">
-                        <span id="toast-message">Hello, world! This is a toast message.</span>
+                        <span id="toast-message">This is a toast message.</span>
                         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                      </div>
                   </div>
-               </div>
                <div class="row p-2 mb-5">
-                  <div class="col">
+                  <div class="col-md-4 col-sm-6 shadow border-secondary rounded m-4">
                      <div class="row m-1">
                         <h2 class="">New Training</h2>
                      </div>
@@ -91,26 +106,42 @@
                               <label class="custom-file-label" for="customFile">Choose file</label>
                            </div>
                         </div>
+                        
+                        <div class="form-row mt-2">
+                        <div class="form-check form-check-inline">
+						  <input checked class="form-check-input" type="radio" name="training_type" id="training_type1" value="ner">
+						  <label class="form-check-label" for="inlineRadio1">NER</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="radio" name="training_type" id="training_type2" value="sentiment">
+						  <label class="form-check-label" for="inlineRadio2">Sentiment</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="radio" name="training_type" id="training_type3" value="pos" disabled>
+						  <label class="form-check-label" for="inlineRadio3">POS (disabled)</label>
+						</div>
+                        
+                        </div>
+                        
                         <div class="form-row mt-2">
                            <button id="new-training" style="width: 100px;" type="submit" class="btn btn-primary mb-2">Execute</button>
                         </div>
                      </form>
                   </div>
-               </div>
-               <hr>
-               <div class="row p-2">
-                  <div class="col ml-2">
-                     <div class="row">
-                        <h2 class="mt-4">Training History (Last 5)</h2>
+                  
+                  <div class="col-md-7 col-sm-6 shadow border-secondary rounded m-4">
+                     <div class="row m-1">
+                        <h2>Training History (Last 5)</h2>
                      </div>
-                     <div class="row">
-                        <table class="table table-striped">
-                           <thead>
+                     <div class="row m-1">
+                        <table class="table border text-center">
+                           <thead style="background-color: #37517e; color: #fff; ">
                               <tr>
                                  <th>Job Id</th>
+                                 <th>Type</th>
                                  <th>Status</th>
-                                 <th></th>
-                                 <th>Download Model</th>
+                                 <th class="d-none d-sm-table-cell">Refresh Status</th>
+                                 <th class="d-none d-sm-table-cell">Download Model</th>
                               </tr>
                            </thead>
                            <tbody id="job-history">
@@ -118,15 +149,23 @@
                                  th:id = "${'job_'+item.execution_id}"
                                  th:each="item, iStat : ${items}">
                                  <td th:text="${item.execution_id}" />
+                                 <td th:text="NER" />
                                  <td th:id = "${'status_'+item.execution_id}" th:text="${item.job_status}" />
-                                 <td><button style="" th:attr="data-value=${item.execution_id}" th:id="${'refresh_'+item.execution_id}" type="button" class="btn btn-primary jobrefresh">refresh</button></td>
-                                 <td><button style="" th:attr="data-value=${item.execution_id}" th:id="${'download_'+item.execution_id}" type="button" class="btn btn-primary download">download</button></td>
+                                 <td class="d-none d-sm-table-cell"><button th:disabled="${item.job_status == 'COMPLETED'}" th:attr="data-value=${item.execution_id}" th:id="${'refresh_'+item.execution_id}" type="button" class="btn btn-primary jobrefresh">refresh</button></td>
+                                 <td class="d-none d-sm-table-cell"><button th:attr="data-value=${item.execution_id}" th:id="${'download_'+item.execution_id}" type="button" class="btn btn-primary download">download</button></td>
                               </tr>
                            </tbody>
                         </table>
                      </div>
                   </div>
+               
+               
+               
+               
                </div>
+               <hr>
+               
+               
             </div>
          </div>
          <!-- /#page-content-wrapper -->
