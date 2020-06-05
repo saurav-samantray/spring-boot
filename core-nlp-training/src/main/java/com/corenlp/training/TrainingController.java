@@ -1,6 +1,7 @@
 package com.corenlp.training;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -58,7 +59,7 @@ public class TrainingController {
 	JobExplorer jobExplorer;
 
 	@PostMapping("ner")
-	public DetailResponse nerTraining(@ModelAttribute TrainingJobRequest requestBody) {
+	public DetailResponse nerTraining(@ModelAttribute TrainingJobRequest requestBody) throws FileNotFoundException, IOException {
 		JobDetail jobDetail = new JobDetail();
 		DetailResponse dr = new DetailResponse();
 			
@@ -88,11 +89,10 @@ public class TrainingController {
 			logger.error(e.getMessage());
 			dr.setErrorMessage(e.getMessage());
 			dr.setSuccess(false);
-		} catch (IOException e) {
-			logger.error(e.getMessage());
-			dr.setErrorMessage(e.getMessage());
-			dr.setSuccess(false);
-		}
+		} /*
+			 * catch (IOException e) { logger.error(e.getMessage());
+			 * dr.setErrorMessage(e.getMessage()); dr.setSuccess(false); }
+			 */
 		return dr;
 	}
 	
@@ -144,7 +144,7 @@ public class TrainingController {
 	}
 	
 	// Save Files
-    private String saveUploadedFiles(MultipartFile[] files) throws IOException {
+    private String saveUploadedFiles(MultipartFile[] files) throws FileNotFoundException, IOException {
  
         // Make sure directory exists!
         File uploadDir = new File(UPLOAD_DIR);
@@ -156,7 +156,7 @@ public class TrainingController {
         for (MultipartFile file : files) {
  
             if (file.isEmpty()) {
-                return null;
+                throw new FileNotFoundException();
             }
             uploadFilePath = UPLOAD_DIR + "/" + file.getOriginalFilename();
  
