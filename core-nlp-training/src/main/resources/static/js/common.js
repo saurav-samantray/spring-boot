@@ -31,8 +31,8 @@ $( document ).ready(function() {
 						"<td>" + value['execution_id'] + "</td>" +
 						"<td>NER</td>"+
 						"<td id='status_" + value['execution_id'] + "'>" + value['job_status'] + "</td>" +
-						"<td><button "+disabled+" id='refresh_" + value['execution_id'] + "' type='button' class='btn btn-primary jobrefresh' data-value=" + value['execution_id'] + ">refresh</button></td>" +
-						"<td><button id='download_" + value['execution_id'] + "' type='button' class='btn btn-primary download' data-value=" + value['execution_id'] + ">download</button></td>" +
+						"<td class='d-none d-sm-table-cell'><button "+disabled+" id='refresh_" + value['execution_id'] + "' type='button' class='btn btn-primary jobrefresh' data-value=" + value['execution_id'] + ">refresh</button></td>" +
+						"<td class='d-none d-sm-table-cell'><button id='download_" + value['execution_id'] + "' type='button' class='btn btn-primary download' data-value=" + value['execution_id'] + ">download</button></td>" +
 						"</tr>"
 					});
 
