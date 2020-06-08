@@ -27,7 +27,7 @@ $( document ).ready(function() {
 							disabled = "disabled"
 						}
 						history_update = history_update +
-						"<tr id='job_" + value['execution_id'] + "'>" +
+						"<tr onclick='fetch_details("+value['execution_id']+")' id='job_" + value['execution_id'] + "'>" +
 						"<td>" + value['execution_id'] + "</td>" +
 						"<td>NER</td>"+
 						"<td id='status_" + value['execution_id'] + "'>" + value['job_status'] + "</td>" +

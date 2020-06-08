@@ -32,3 +32,4 @@ build/
 
 ner-model-beauty.ser.gz
 tmp
+output

@@ -1,13 +1,28 @@
 package com.corenlp.training.pojo.response;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class JobDetail implements Serializable{
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 10033L;
+
 	private long execution_id;
 	
 	private String job_status;
+	
+	List<Double> gradNorm;
+	
+	public List<Double> getGradNorm() {
+		return gradNorm;
+	}
+	public void setGradNorm(List<Double> gradNorm) {
+		this.gradNorm = gradNorm;
+	}
 	
 
 	public long getExecution_id() {

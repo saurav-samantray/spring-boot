@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -38,6 +39,9 @@ import com.corenlp.training.pojo.request.TrainingJobRequest;
 import com.corenlp.training.pojo.response.DetailResponse;
 import com.corenlp.training.pojo.response.JobDetail;
 import com.corenlp.training.pojo.response.ListResponse;
+import com.corenlp.training.utils.CustomIOUtils;
+
+import edu.stanford.nlp.io.IOUtils;
 
 
 @RestController
@@ -70,8 +74,9 @@ public class TrainingController {
 
 		try {
 			//upload training file to temp folder
-			String uploadFilePath = saveUploadedFiles(requestBody.getFiles());
-			if(uploadFilePath == null) {
+			String trainFilePath = saveUploadedFiles(requestBody.getTrainFiles());
+			String testFilePath = saveUploadedFiles(requestBody.getTestFiles());
+			if(trainFilePath == null) {
 				dr.setErrorMessage("File not found or not provided");
 				dr.setSuccess(false);
 				return dr;
@@ -80,7 +85,8 @@ public class TrainingController {
 			JobParameters jobParameters = new JobParametersBuilder()
 					.addLong("time", System.currentTimeMillis())
 					.addDouble("tolerance", requestBody.getTolerance())
-					.addString("train_file",uploadFilePath)
+					.addString("train_file",trainFilePath)
+					.addString("test_file",testFilePath)
 					.addString("model_name", requestBody.getModel_name())
 					.toJobParameters();
 
@@ -107,10 +113,20 @@ public class TrainingController {
 		if(null != je) {
 			jobDetail.setExecution_id(je.getId());
 			jobDetail.setJob_status(je.getStatus().toString());
+			try {
+				List<Double> results = CustomIOUtils.getDoubleColumnFromCSV("output/"+executionId+"/QN_m25_MINPACK_DIAGONAL.output",2,",");
+				jobDetail.setGradNorm(results);
+				logger.info(results.toString());
+			} catch (IOException e) {
+				logger.error(e.getMessage());
+			}
 			dr.setJobDetail(jobDetail);
 		}else {
 			dr.setErrorMessage("Job not found");
 		}
+		
+		
+		
 		return dr;
 	}
 

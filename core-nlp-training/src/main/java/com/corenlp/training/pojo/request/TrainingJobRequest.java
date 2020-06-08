@@ -10,14 +10,24 @@ public class TrainingJobRequest {
 	
 	private String train_file;
 	
-	private MultipartFile[] files;
+	private MultipartFile[] trainFiles;
 	
-	public MultipartFile[] getFiles() {
-		return files;
+	private MultipartFile[] testFiles;
+	
+	public MultipartFile[] getTrainFiles() {
+		return trainFiles;
 	}
 
-	public void setFiles(MultipartFile[] files) {
-		this.files = files;
+	public void setTrainFiles(MultipartFile[] trainFiles) {
+		this.trainFiles = trainFiles;
+	}
+
+	public MultipartFile[] getTestFiles() {
+		return testFiles;
+	}
+
+	public void setTestFiles(MultipartFile[] testFiles) {
+		this.testFiles = testFiles;
 	}
 
 	public double getTolerance() {

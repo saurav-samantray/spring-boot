@@ -13,10 +13,14 @@ import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.stereotype.Service;
 
+import com.corenlp.training.core.L7CRFClassifier;
+
 import edu.stanford.nlp.ie.crf.CRFClassifier;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.sequences.SeqClassifierFlags;
 import edu.stanford.nlp.util.StringUtils;
+
+
 
 @Service
 public class NERTrainingTask implements Tasklet{
@@ -42,6 +46,11 @@ public class NERTrainingTask implements Tasklet{
 				      .getJobParameters().getString("model_name"));
 		   props.setProperty("trainFile", chunkContext.getStepContext().getStepExecution()
 				      .getJobParameters().getString("train_file"));
+		   if(chunkContext.getStepContext().getStepExecution()
+				      .getJobParameters().getString("test_file") != null) {
+			   props.setProperty("testFile", chunkContext.getStepContext().getStepExecution()
+				      .getJobParameters().getString("test_file"));
+		   }
 		   
 		   //Setting the temp train_file in Execution context for deleting it later
 		   chunkContext
@@ -52,11 +61,16 @@ public class NERTrainingTask implements Tasklet{
 		   	.put("train_file", chunkContext.getStepContext().getStepExecution()
 				      .getJobParameters().getString("train_file"));
 		   
+		   long jobId = chunkContext
+		   	.getStepContext()
+		   	.getStepExecution()
+		   	.getJobExecution().getId();
 		   
 		   logger.info("Tolerance after: "+props.getProperty("tolerance"));
 		   String modelOutPath = props.getProperty("serializeTo");
 		   SeqClassifierFlags flags = new SeqClassifierFlags(props);
-		   CRFClassifier<CoreLabel> crf = new CRFClassifier<>(flags);
+		   L7CRFClassifier<CoreLabel> crf = new L7CRFClassifier<>(flags);
+		   crf.setJobId(jobId);
 		   crf.train();
 		   crf.serializeClassifier(modelOutPath);
 		   

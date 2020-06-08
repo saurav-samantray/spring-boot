@@ -26,7 +26,5 @@ public class DetailResponse {
 	public void setJobDetail(JobDetail jobDetail) {
 		this.jobDetail = jobDetail;
 	}
-	
-	
 
 }

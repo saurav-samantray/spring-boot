@@ -6,6 +6,8 @@ and	O
 works	O
 like	O
 magic	O
+
+
 Weightless	product
 moisture	product
 If	O
@@ -86,6 +88,8 @@ enjoy	O
 your	O
 gleaming	applied_for
 locks	applied_for
+
+
 The	O
 one	O
 bottle	O
@@ -114,6 +118,8 @@ QUESTION	O
 I	O
 REPLY	O
 QUICKLY	O
+
+
 Sealed	O
 16oz	weight
 Wen	brand
@@ -123,14 +129,20 @@ Citrus	product
 Cleansing	product
 Conditioner	product
 wpump	O
+
+
 Moisture	product
 repair	product
 conditioner	product
+
+
 3	O
 Dove	brand
 Dry	product
 Shampoo	product
 Fullsize	O
+
+
 Highly	O
 Effective	O
 Micro	O
@@ -190,6 +202,8 @@ on	O
 Amazon	brand
 for	O
 	O
+
+
 This	O
 system	O
 helps	applied_for
@@ -228,6 +242,8 @@ strand	applied_for
 AMAZING	O
 PRODUCT	O
 SYSTEM	O
+
+
 WEN	brand
 Pomegranate	product
 Re	product
@@ -243,6 +259,8 @@ factory	O
 sealed	O
 FREE	shipping_details
 SHIPPING	shipping_details
+
+
 4	O
 bottles	O
 HS	product
@@ -262,6 +280,8 @@ new	O
 price	O
 is	O
 firm	O
+
+
 You	O
 get	O
 all	O
@@ -273,6 +293,8 @@ split	O
 up	O
 Great	O
 price	O
+
+
 Hair	product
  	product
 body	product
@@ -292,6 +314,8 @@ Amazon	brand
 11.8	weight
 fl	weight
 oz	weight
+
+
 3	O
 travel	O
 size	O
@@ -304,6 +328,8 @@ In	product
 Conditioner	product
 Never	product_condition
 used	product_condition
+
+
 Solid	product
 shampoo	product
 bars	product
@@ -349,6 +375,8 @@ listings	O
 for	O
 different	O
 fragrances	O
+
+
 Monat	brand
 revive	product
 volumizing	product
@@ -356,6 +384,8 @@ shampoo	product
 Brand	product_condition
 new	product_condition
 sealed	product_condition
+
+
 NEW	O
 Keranique	brand
 volumizing	product
@@ -366,6 +396,8 @@ oz	weight
 PRICE	O
 IS	O
 FIRM	O
+
+
 Grey	product
 Reducing	product
 Shampoo	product
@@ -377,6 +409,8 @@ three	O
 OR	O
 One	O
 for	O
+
+
 Like	O
 new	O
 Garnier	brand
@@ -385,6 +419,8 @@ Blends	product
 Leave	product
 In	product
 Conditioner	product
+
+
 Dark	hair_color
 toned	hair_color
 hair	hair_color
@@ -394,6 +430,8 @@ best	O
 product	O
 out	O
 there	O
+
+
 2	O
 New	product_condition
 unopened	product_condition
@@ -408,6 +446,8 @@ Miracle	product
 LeaveIn	product
 Conditioner	product
 10oz	weight
+
+
 Its	brand
 a	brand
 10	brand
@@ -493,6 +533,8 @@ be	O
 close	O
 to	O
 	O
+
+
 1	O
 Kerastase	product
 Fondant	product
@@ -506,6 +548,8 @@ Frizz	product_features
 New	product_condition
 never	product_condition
 used	product_condition
+
+
 Brand	product_condition
 new	product_condition
 Matrix	brand
@@ -543,6 +587,8 @@ is	O
 just	O
 as	O
 good	O
+
+
 Brand	product_condition
 new	product_condition
 completely	product_condition
@@ -565,6 +611,8 @@ bottle	weight
 Retails	O
 for	O
 	O
+
+
 Brand	product_condition
 New	product_condition
 Matrix	brand
@@ -615,6 +663,8 @@ curls	applied_for
  	O
 Adds	applied_for
 moisture	applied_for
+
+
 Exfoliating	applied_for
 aveda	brand
 shampoo	product
@@ -629,6 +679,8 @@ to	O
 comment	O
 an	O
 offer	O
+
+
 New	O
 amika	O
 perk	O
@@ -645,6 +697,8 @@ dry	product
 shampoo	product
  	O
 shipped	O
+
+
 pretty	product_condition
 much	product_condition
 new	product_condition
@@ -705,6 +759,8 @@ pomade	O
 conditioning	O
 wave	applied_for
 enhancer	applied_for
+
+
 Never	product_condition
 used	product_condition
 or	product_condition
@@ -720,6 +776,8 @@ dont	O
 use	O
 this	O
 product	O
+
+
 33.8	weight
 fl	weight
 oz	weight
@@ -760,6 +818,8 @@ cant	O
 buy	O
 anywhere	O
 else	O
+
+
 Apply	O
 a	O
 generous	O
@@ -808,6 +868,8 @@ with	O
 other	O
 MONAT	brand
 products	O
+
+
 Brand	product_condition
 new	product_condition
  	O
@@ -843,6 +905,8 @@ markdowns	O
  	O
 and	O
 under	O
+
+
 One	O
 2oz	weight
 Apply	O
@@ -874,6 +938,8 @@ Fast	O
 results	O
 in	O
 atleast	O
+
+
 1028	weight
 fl	weight
 oz	weight
@@ -893,6 +959,8 @@ fl	weight
 oz	weight
 suave	brand
 professional	brand
+
+
 Used	product_condition
 once	product_condition
 Thought	O
@@ -918,6 +986,8 @@ like	O
 new	O
 condition	O
 Retail	O
+
+
 10.9	weight
 oz	weight
 big	O
@@ -931,6 +1001,8 @@ half	O
 of	O
 product	O
 left	O
+
+
 Never	product_condition
 used	product_condition
 Brand	product_condition
@@ -942,6 +1014,8 @@ use	O
 because	O
 of	O
 ingredients	O
+
+
 Batiste	brand
 Dark	product_features
 and	product_features
@@ -965,6 +1039,8 @@ Hair	hair_color
 6.73	weight
 Fl	weight
 Oz	weight
+
+
 Lush	brand
 No	product
 Drought	product
@@ -984,6 +1060,8 @@ like	O
 grapefruit	ingredients
 and	O
 lime	ingredients
+
+
 Brandnew	product_condition
 one	O
 8	weight
@@ -1009,6 +1087,8 @@ infuses	applied_for
 hair	applied_for
 with	applied_for
 movement	applied_for
+
+
 1	O
 Breath	O
 of	O
@@ -1031,6 +1111,8 @@ conditioner	product
 blue	product
 sequin	product
 outfit	product
+
+
 One	O
 FULL	O
  	O
@@ -1039,6 +1121,8 @@ NEW	product_condition
 Bottle	O
 of	O
 Shampoo	product
+
+
 New	product_condition
 in	product_condition
 box	product_condition
@@ -1083,6 +1167,8 @@ braids,	hair_types
 curly,	hair_types
 wavy	hair_types
 hair	O
+
+
 Free	O
 shipping	O
 Brand	product_condition
@@ -1121,6 +1207,8 @@ will	O
 also	O
 moisturize	applied_for
 scalp	applied_for
+
+
 16	weight
 Oz	weight
 sweet	ingredients
@@ -1151,6 +1239,8 @@ hair	O
 to	O
 wavy	hair_types
 ones	O
+
+
 Lush	brand
 Karma	product
 Komba	product
@@ -1186,6 +1276,8 @@ damage	hair_concern
 and	O
 gray	hair_concern
 hair	O
+
+
 Brand	product_condition
 new	product_condition
 12	weight
@@ -1213,6 +1305,8 @@ with	O
 softening	applied_for
 and	O
 moisturizing	applied_for
+
+
 1oz	weight
 hair	product
 growth	product
@@ -1246,6 +1340,8 @@ to	O
 improve	O
 daily	applied_for
 manageability	applied_for
+
+
 NEW	product_condition
 Dove	brand
 Oxygen	product
@@ -1297,6 +1393,8 @@ extra	O
 boost	O
 of	O
 moisture	applied_for
+
+
 4	O
  	O
 Pantene	brand
@@ -1345,6 +1443,8 @@ FOR	O
 SHOPPING	O
 WITH	O
 US	O
+
+
 WEN	brand
 Pomegranate	product
 Cleansing	product
@@ -1360,6 +1460,8 @@ Pump	product_features
 included	product_features
 FREE	O
 SHIPPING	O
+
+
 New	product_condition
  	product_condition
 Sealed	product_condition
@@ -1377,6 +1479,8 @@ oz	weight
 Price	O
 is	O
 Firm	O
+
+
 Premium	O
 sudsy	O
 shampoo	product
@@ -1466,6 +1570,8 @@ to	O
 ship	O
 same	O
 day	O
+
+
 Shampoo	product
 with	O
 yogurt	ingredients
@@ -1497,6 +1603,8 @@ colorsfragrance	free_of
 Retails	O
 for	O
 	O
+
+
 Brand	product_condition
 New	product_condition
 Shea	brand
@@ -1535,6 +1643,8 @@ restores	applied_for
 lifeless	applied_for
 damaged	applied_for
 hair	applied_for
+
+
 Silicon	brand
 bambu	product
 16	weight
@@ -1548,6 +1658,8 @@ grow	applied_for
 hair	applied_for
 shine	applied_for
 softness	applied_for
+
+
 This	O
 is	O
 a	O
@@ -1592,6 +1704,8 @@ oil	O
 Fullsize	O
 retails	O
 for	O
+
+
 Two	O
 of	O
 our	O
@@ -1672,6 +1786,8 @@ in	O
 our	O
 pretty	O
 packages	O
+
+
 Wen	brand
 Cleansing	product
 Conditioner	product
@@ -1685,6 +1801,8 @@ shrink	O
 wrapped	O
 No	product_features
 pump	product_features
+
+
 Sulfate	free_of
 free	O
 Great	O
@@ -1707,6 +1825,8 @@ you	O
 money	O
 on	O
 shipping	O
+
+
 BUNDLE	O
 AND	O
 SAVE	O
@@ -1735,6 +1855,8 @@ used	product_condition
 shampoo	O
 Full	product_features
 sized	product_features
+
+
 3	O
 deep	product
 conditioner	product
@@ -1766,6 +1888,8 @@ shampoo	product
 and	O
 conditioner	product
 samples	O
+
+
 75	weight
 mL	weight
 Never	product_condition
@@ -1775,6 +1899,8 @@ new	O
 SN	O
 smells	O
 AHHMAZING	O
+
+
 All	O
 brand	O
 New	O
@@ -1811,6 +1937,8 @@ other	O
 listings	O
 Thank	O
 you	O
+
+
 New	O
  	O
 Sealed	O
@@ -1822,6 +1950,8 @@ project	O
 beauty	O
 4	weight
 floz	weight
+
+
 Apply	O
 to	O
 scalp	O
@@ -1850,6 +1980,8 @@ weeks	O
 Also	O
 grows	applied_for
 beards	applied_for
+
+
 Scent	O
 is	O
 winter	product
@@ -1890,6 +2022,8 @@ for	O
  	O
 Two	O
 for	O
+
+
 Never	O
 used	O
 ORS	brand
@@ -1901,6 +2035,8 @@ purchased	O
 at	O
 organic	product_source
 salon	product_source
+
+
 350ml	weight
 brand	product_condition
 new	product_condition
@@ -1983,6 +2119,8 @@ after	O
 just	O
 one	O
 usewash	O
+
+
 curls	brand
 unleashed	brand
 golden	product
@@ -2036,6 +2174,8 @@ for	O
 extra	applied_for
 silky	applied_for
 hair	applied_for
+
+
 NEW	O
 Bundle	O
 of	O
@@ -2068,6 +2208,8 @@ normal	hair_condition
 and	O
 oily	hair_condition
 hair	O
+
+
 Barely	product_condition
 used	product_condition
 Leave	product
@@ -2090,6 +2232,8 @@ your	O
 hair	O
 usually	O
 dry	hair_condition
+
+
 BRAND	product_condition
 NEW	product_condition
 Reparative	product
@@ -2105,6 +2249,8 @@ hair	O
 that	O
 love	O
 curls	hair_types
+
+
 New	O
 bottle	O
 of	O
@@ -2141,6 +2287,8 @@ ends	hair_concern
 and	O
 dry	hair_concern
 scalp	hair_concern
+
+
 New	O
 set	O
 of	O
@@ -2169,6 +2317,8 @@ or	O
 black	hair_color
 hair	O
 prefered	O
+
+
 5	O
 Intense	product
 Repair	product
@@ -2195,6 +2345,8 @@ while	O
 maintaining	O
 the	O
 curls	hair_types
+
+
 ORS	brand
 Olive	product
 Oil	product
@@ -2209,6 +2361,8 @@ Heat	product_features
 Defense	product_features
 4.6	weight
 oz	weight
+
+
 ORS	brand
 Olive	product
 Oil	product
@@ -2227,6 +2381,8 @@ never	product_condition
 used	product_condition
 8.5	weight
 oz	weight
+
+
 One	O
 of	O
 our	O
@@ -2276,6 +2432,8 @@ and	O
 save	O
 on	O
 shipping	O
+
+
 Wen	brand
 pink	product
 jasmine	product
@@ -2299,6 +2457,8 @@ have	O
 a	O
 great	O
 day	O
+
+
 60	O
 tabs	O
 expires	O
@@ -2319,10 +2479,14 @@ Free	shipping_details
 shipping	shipping_details
 Bought	O
 for	O
+
+
 Brand	product_condition
 new	product_condition
 never	product_condition
 used	product_condition
+
+
 Black	brand
 vanilla	brand
 4	product
@@ -2330,6 +2494,8 @@ in	product
 1	product
 combing	product
 creme	product
+
+
 Monat	brand
 Revive	product
 Shampoo	product
@@ -2365,6 +2531,8 @@ items	O
 just	O
 message	O
 me	O
+
+
 Brand	product_condition
 new	product_condition
 Moroccan	brand
@@ -2375,6 +2543,8 @@ shampoo	product
 oz	weight
 Free	shipping_details
 shipping	shipping_details
+
+
 Dark	hair_color
 hair	O
 dry	product
@@ -2383,6 +2553,8 @@ with	O
 lavender	product_features
 rosemary	product_features
 scent	product_features
+
+
 4	O
 New	O
 John	brand
@@ -2436,6 +2608,8 @@ to	O
 save	O
 on	O
 shipping	O
+
+
 2	O
 perfectly	O
 posh	O
@@ -2444,6 +2618,8 @@ hair	O
 dont	O
 care	O
 sprays	O
+
+
 Shimmer	brand
 lights	brand
 purple	product
@@ -2512,6 +2688,8 @@ OR	O
 LEAVE	O
 ALL	O
 THANKS	O
+
+
 Its	brand
 a	brand
 10	brand
@@ -2523,6 +2701,8 @@ in	product
 conditioner	product
 plus	O
 keratin	ingredients
+
+
 Brand	product_condition
 New	product_condition
 Travel	O
@@ -2536,6 +2716,8 @@ cleansing	product
 foam	product
 conditioner	product
 1.5oz	weight
+
+
 About	product_condition
 half	product_condition
 remains	product_condition
@@ -2555,6 +2737,8 @@ so	O
 label	O
 is	O
 peeling	O
+
+
 I	product
 Love	product
 Juicy	product
@@ -2631,6 +2815,8 @@ for	O
 more	O
 Lush	brand
 products	O
+
+
 Apply	O
 small	O
 amount	O
@@ -2672,6 +2858,8 @@ HAVE	O
 HERBS	O
 IN	O
 BOTTLE	O
+
+
 Regis	brand
 Salon	O
 brand	O
@@ -2704,6 +2892,8 @@ Never	O
 used	O
 FREE	shipping_details
 SHIPPING	shipping_details
+
+
 Cleansing	product
 Conditioner	product
 4	O
@@ -2734,6 +2924,8 @@ is	O
 a	O
 set	O
 price	O
+
+
 ORS	brand
 Olive	product
 Oil	product
@@ -2755,6 +2947,8 @@ Infused	O
 With	O
 Castor	ingredients
 Oil	ingredients
+
+
 300	weight
 ml	weight
 bottles	O
@@ -2821,12 +3015,16 @@ softer	O
 and	O
 more	O
 manageable	O
+
+
 110oz	weight
 Ors	brand
 olive	product
 oil	product
 all	product
 naturals	product
+
+
 Brand	product_condition
 new	product_condition
 never	product_condition
@@ -2901,6 +3099,8 @@ no	O
 holds	O
 thank	O
 you	O
+
+
 Not	O
 opened	O
 Lush	brand
@@ -2911,6 +3111,8 @@ conditioner	product
 8.4	weight
 oz	weight
 bottle	O
+
+
 Lush	brand
 The	product
 Plumps	product
@@ -2950,6 +3152,8 @@ all	O
 sales	O
 are	O
 final	O
+
+
 Amazing	O
 product	O
 Ive	O
@@ -3005,6 +3209,8 @@ Details	O
 on	O
 2nd	O
 photo	O
+
+
 Lets	O
 make	O
 a	O
@@ -3075,11 +3281,15 @@ is	O
 for	O
 one	O
 bar	O
+
+
 One	O
 can	O
 of	O
 dry	product
 hairspray	product
+
+
 ORS	brand
 Organic	product
 Root	product
@@ -3096,6 +3306,8 @@ Leaf	ingredients
 and	O
 Horsetail	ingredients
 Extract	ingredients
+
+
 More	product_condition
 than	product_condition
 half	product_condition
@@ -3119,6 +3331,8 @@ Im	O
 doing	O
 free	shipping_details
 shipping	shipping_details
+
+
 This	O
 wig	O
 has	O
@@ -3179,6 +3393,8 @@ to	O
 inches	O
 of	O
 parting	O
+
+
 Its	brand
 a	brand
 10	brand
@@ -3264,17 +3480,23 @@ be	O
 close	O
 to	O
 	O
+
+
 New	O
 Smoke	O
 free	O
 home	O
 Fast	shipping_details
 shipping	shipping_details
+
+
 Like	O
 new	O
 sprayed	O
 a.couple	O
 times	O
+
+
 Controls	O
 flaking	applied_for
 Scaling	applied_for
@@ -3287,6 +3509,8 @@ half	O
 of	O
 the	O
 bottle	O
+
+
 This	O
 item	O
 is	O
@@ -3299,6 +3523,8 @@ Size	O
 Price	O
 is	O
 Firm	O
+
+
 Brand	product_condition
 new	product_condition
 never	O
@@ -3346,6 +3572,8 @@ bestseller	O
 toprated	O
 cosmetics	O
 beauty	O
+
+
 Retails	O
 for	O
  	O
@@ -3402,6 +3630,8 @@ Color	product
 maintenance	product
 hair	product
 dye	product
+
+
 Brand	product_condition
 new	product_condition
 never	product_condition
@@ -3422,6 +3652,8 @@ hair	applied_for
 Size	O
 8	weight
 oz	weight
+
+
 Discontinued	O
 Ogx	brand
 Kukui	product
@@ -3442,6 +3674,8 @@ the	O
 cold	O
 winter	O
 months	O
+
+
 JOICO	brand
 Color	product
 balance	product
@@ -3454,6 +3688,8 @@ on	O
 lightened	hair_color
 brown	hair_color
 hair	hair_color
+
+
 Professional	O
 color	O
 protecting	O
@@ -3482,6 +3718,8 @@ used	O
 200ml	weight
 6.8	weight
 oz	weight
+
+
 BATISTE	brand
 DRY	product
 SHAMPOO	product
@@ -3493,12 +3731,16 @@ for	O
 16	O
 free	shipping_details
 shipping	shipping_details
+
+
 New	O
 Carols	brand
 Daughter	brand
 Leave	product
 In	product
 Conditioner	product
+
+
 6	O
 aveeno	brand
 baby	product
@@ -3511,6 +3753,8 @@ new	O
 And	O
 2	O
 lotion	O
+
+
 Lush	brand
 cosmetics	brand
 8.4oz	weight
@@ -3530,6 +3774,8 @@ is	O
 Nov	O
 13	O
 2017	O
+
+
 10	O
 shampoo	product
 10.01oz	weight
@@ -3540,6 +3786,8 @@ conditioner	product
 10.oz	weight
 per	O
 bottle	O
+
+
 16oz	weight
 bottle	O
 of	O
@@ -3559,6 +3807,8 @@ once	product_condition
 bottle	O
 is	O
 full	O
+
+
 Phyto	brand
 Paris	product_features
 Phytobaume	product_features
@@ -3576,6 +3826,8 @@ never	product_condition
 used	product_condition
 1.7	weight
 oz	weight
+
+
 Matrix	brand
 total	category
 results	category
@@ -3614,10 +3866,14 @@ with	O
 shine	applied_for
 and	applied_for
 manageability	applied_for
+
+
 Wen	brand
 conditioner	product
 and	O
 pump	container_type
+
+
 There	O
 is	O
 more	product_condition
@@ -3642,6 +3898,8 @@ or	O
 twice	O
 Paid	O
 over	O
+
+
 Brand	product_condition
 new	product_condition
 still	product_condition
@@ -3653,6 +3911,8 @@ coarse	product
 sea	product
 salt	product
 shampoo	product
+
+
 Reviving	O
 red	O
 copper	O
@@ -3716,11 +3976,15 @@ each	O
 10ml	weight
 Retail	O
 price	O
+
+
 New	product_condition
 unused	product_condition
 Retails	O
 for	O
 	O
+
+
 Comes	O
 with	O
  	O
@@ -3743,6 +4007,8 @@ with	O
 every	O
 purchase	O
 Retails	O
+
+
 Miracle	product
 shampoo	product
 plus	product
@@ -3782,6 +4048,8 @@ for	O
  	O
 at	O
 salon	O
+
+
 Triple	product
 Nutrition	product
 conditioner	product
@@ -3789,6 +4057,8 @@ Conditioner	O
 only	O
 Brand	product_condition
 new	product_condition
+
+
 Sealed	product_condition
 in	product_condition
 factory	product_condition
@@ -3808,11 +4078,15 @@ oz	weight
 Sweet	product
 almond	product
 mint	product
+
+
 One	O
 2oz	weight
 bottle	O
 Fast	product_condition
 results	product_condition
+
+
 10	O
 13.6oz	weight
 Schwarzkopf	product
@@ -3841,6 +4115,8 @@ space	O
 for	O
 new	O
 inventory	O
+
+
 Its	brand
 a	brand
 10	brand
@@ -3851,6 +4127,8 @@ This	O
 stuff	O
 is	O
 amazing	O
+
+
 LAVENDER	O
 16	weight
 FL	weight
@@ -3877,6 +4155,8 @@ items	O
 NO	shipping_details
 FREE	shipping_details
 SHIPPING	shipping_details
+
+
 Wen	O
 Bundle	O
 with	O
@@ -3903,6 +4183,8 @@ Awesome	O
 hair	free_of
 care	free_of
 products	O
+
+
 ORS	brand
 Hairepair	category
 Fertilizing	product
@@ -3922,6 +4204,8 @@ healthy	applied_for
 hair	applied_for
 and	applied_for
 scalp	applied_for
+
+
 Never	product_condition
 used	product_condition
 A	O
@@ -3976,6 +4260,8 @@ save	O
 No	O
 lowballing	O
 please	O
+
+
 3	O
 Beautiful	product
 Lengths	product
@@ -4053,6 +4339,8 @@ on	O
 Saturdays	O
 or	O
 Sundays	O
+
+
 1	O
 dark	product
 brown	product
@@ -4075,10 +4363,14 @@ you	O
 a	O
 discounted	O
 price	O
+
+
 All	O
 together	O
 Im	O
 negotiable	O
+
+
 Authetic	O
 Used	product_condition
 about	product_condition
@@ -4119,6 +4411,8 @@ bad	O
 for	O
 the	O
 hair	O
+
+
 New	product_condition
 Sealed	product_condition
 16	weight
@@ -4126,6 +4420,8 @@ oz	weight
 Almond	product
 mint	product
 Sixteen	product
+
+
 FLASH	O
 SALE	O
 OFFER	O
@@ -4168,6 +4464,8 @@ TRAVEL	O
 Each	O
 bottle	O
 1.7oz	weight
+
+
 Aussie	brand
 hair	product
 insurance	product
@@ -4178,6 +4476,8 @@ FL	weight
 OZ	weight
 1	O
 bottle	O
+
+
 Recently	O
 purchased	O
 and	O
@@ -4191,6 +4491,8 @@ declutter	O
 Full	O
 size	O
 4.5FlOz	weight
+
+
 10	weight
 oz	weight
 bottle	O
@@ -4204,6 +4506,8 @@ leave	product
 in	product
 conditioner	product
 New	product_condition
+
+
 Authentic	O
 These	O
 are	O
@@ -4218,6 +4522,8 @@ I	O
 have	O
 about	O
 5	O
+
+
 This	O
 is	O
 the	O
@@ -4242,6 +4548,8 @@ dry	product
 shampoo	product
 I	O
 love	O
+
+
 Super	product
 tape	product
 for	O
@@ -4251,6 +4559,8 @@ wigs	applied_for
 toupees	applied_for
 30	weight
 Ct	weight
+
+
 2	O
 unopened	product_condition
 still	product_condition
@@ -4259,11 +4569,15 @@ Blonde	product
 angel	product
 conditioner	product
 treatment	O
+
+
 Thickening	product
 Shampoo	product
 with	O
 biotin	ingredients
 bcomplex	ingredients
+
+
 Apply	O
 small	O
 amount	O
@@ -4327,6 +4641,8 @@ HAVE	O
 HERBS	O
 IN	O
 BOTTLE	O
+
+
 High	O
 Quality	O
 Human	O
@@ -4397,6 +4713,8 @@ have	O
 wigs	O
 for	O
 sale	O
+
+
 Marc	brand
 Anthony	brand
 Ipsy	O
@@ -4407,6 +4725,8 @@ so	O
 cant	O
 use	O
 it	O
+
+
 This	O
 is	O
 for	O
@@ -4415,6 +4735,8 @@ brandnew	O
 PUREOLOGY	brand
 conditioner	product
 liters	O
+
+
 Hope	product
 Hair	product
 Growth	product
@@ -4452,6 +4774,8 @@ liquefy	O
 Size	O
 4	weight
 oz	weight
+
+
 3	O
 deluxe	O
 size	O
@@ -4459,6 +4783,8 @@ amika	brand
 dry	product
 shampoo	product
 new	O
+
+
 A	O
 frisky	O
 pink	O
@@ -4521,6 +4847,8 @@ packaging	O
 suitable	O
 for	O
 vegans	product_source
+
+
 6oz	weight
 Wen	brand
 Cleansing	product
@@ -4539,6 +4867,8 @@ hair	hair_types
 types	O
 Free	shipping_details
 shipping	shipping_details
+
+
 New	product_condition
 never	product_condition
 used	product_condition
@@ -4598,6 +4928,8 @@ like	O
 a	O
 baby	hair_types
 hair	hair_types
+
+
 6	O
 after	product_features
 color	product_features
@@ -4611,6 +4943,8 @@ essences	ingredients
 Clairol	brand
 Natural	product
 Instincts	product
+
+
 Hair	O
 Skin	O
 Nails	O
@@ -4628,6 +4962,8 @@ box	O
 	O
 IT	O
 WORKS	O
+
+
 Cynthia	product
 Sylvia	product
 Stout	product
@@ -4639,6 +4975,8 @@ never	product_condition
 used	product_condition
 FREE	shipping_details
 SHIP	shipping_details
+
+
 Basically	product_condition
 brand	product_condition
 new	product_condition
@@ -4679,6 +5017,8 @@ care	O
 of	O
 my	O
 hair	O
+
+
 Wen	brand
 Bundle	O
 with	O
@@ -4705,6 +5045,8 @@ Awesome	O
 hair	O
 care	O
 products	O
+
+
 I	O
 Bought	O
 This	O
@@ -4761,6 +5103,8 @@ Floral	product
 Flirty	product
 Blush	product
 1.6oz	weight
+
+
 Apply	O
 small	O
 amount	O
@@ -4802,6 +5146,8 @@ HAVE	O
 HERBS	O
 IN	O
 BOTTLE	O
+
+
 A	O
 salt	free_of
 and	free_of
@@ -4872,6 +5218,8 @@ see	O
 in	O
 second	O
 picture	O
+
+
 29.5	weight
 ml	weight
 Cocoa	product
@@ -4929,6 +5277,8 @@ detangling	applied_for
 and	O
 curl	applied_for
 manageability	applied_for
+
+
 NEW	O
 never	product_condition
 been	product_condition
@@ -4988,6 +5338,8 @@ promote	O
 healthy	applied_for
 hair	applied_for
 growth	applied_for
+
+
 Curls	category
 Unleashed	category
 Coconut	product
@@ -5029,6 +5381,8 @@ strengthen	applied_for
 curls	applied_for
 Free	shipping_details
 shipping	shipping_details
+
+
 New	O
 33.8	weight
 fl	weight
@@ -5040,6 +5394,8 @@ shampoo	product
 The	O
 big	O
 bottle	O
+
+
 Brand	product_condition
 new	product_condition
 never	product_condition
@@ -5091,6 +5447,8 @@ them	O
 soft	O
 and	O
 manageable	O
+
+
 Nioxin	brand
 Cleanser	product
 for	product
@@ -5173,6 +5531,8 @@ left	O
 silky	O
 and	O
 smooth	O
+
+
 Sulfate-free	free_of
 low	O
 lather	O
@@ -5203,6 +5563,8 @@ leaving	O
 curls	applied_for
 soft	applied_for
 and	O
+
+
 Wen	brand
 by	O
 Chaz	brand
@@ -5242,6 +5604,8 @@ with	O
 multiple	O
 purchases	O
 Thanks	O
+
+
 Bundle	O
 including	O
 2	O
@@ -5271,11 +5635,15 @@ washes	O
 retail	O
  	O
 each	O
+
+
 new	O
 never	product_condition
 used	product_condition
 75	weight
 oz	weight
+
+
 3	O
 10	weight
 oz	weight
@@ -5288,6 +5656,8 @@ Value	O
  	O
 Brand	product_condition
 new	product_condition
+
+
 My	O
 Magic	O
 Hair	O
@@ -5354,6 +5724,8 @@ long	applied_for
  	O
 100%	product_source
 Organic	product_source
+
+
 Shampoo	product
 for	O
 bright	hair_color
@@ -5364,8 +5736,12 @@ About	product_condition
 full	product_condition
 Jumbo	O
 bottle	O
+
+
 Cleansing	product
 Conditioner	product
+
+
 WEN	brand
 Restorative	product
 Cleansing	product
@@ -5383,6 +5759,8 @@ pump	container_type
 comes	O
 in	O
 box	O
+
+
 One	O
 liter	O
 luxury	O
@@ -5407,9 +5785,13 @@ Kevin	brand
 Murphy	brand
 brand	product_condition
 new	product_condition
+
+
 Color	product
 enhancing	product
 shampoo	product
+
+
 2	O
 shampoo	product
 bars	product
@@ -5423,6 +5805,8 @@ tin	O
 to	O
 store	O
 one	O
+
+
 New	O
 Still	O
 sealed	O
@@ -5430,6 +5814,8 @@ Travel	O
 size	O
 dry	product
 shampoos	product
+
+
 Brand	product_condition
 new	product_condition
 You	O
@@ -5452,6 +5838,8 @@ to	O
 save	O
 on	O
 shipping	O
+
+
 BRAND	O
 IS	O
 NOT	O
@@ -5472,6 +5860,8 @@ size	O
  	O
 not	O
 mini	O
+
+
 2	O
 wen	brand
 almond	product
@@ -5524,6 +5914,8 @@ the	O
 love	O
 of	O
 wen	O
+
+
 TRESemme	brand
 Moisture	product
 Rich	product
@@ -5537,6 +5929,8 @@ Condition	O
 new	O
 Shipping	shipping_details
 free	shipping_details
+
+
 New	O
 Authentic	O
 1	weight
@@ -5602,6 +5996,8 @@ there	O
 are	O
 no	O
 delays	O
+
+
 Rock	brand
 on	brand
 dry	product
@@ -5609,6 +6005,8 @@ shampoo	product
 great	O
 for	O
 brunettes	hair_color
+
+
 Brand	product_condition
 new	product_condition
 WEN	brand
@@ -5627,6 +6025,8 @@ bottle	O
 Bundle	O
 to	O
 saver	O
+
+
 Sulfate-free	free_of
 low-lather	O
 conditioning	product
@@ -5657,6 +6057,8 @@ curls	product_features
 soft	product_features
 and	product_features
 defined	product_features
+
+
 3.16	weight
 oz	weight
 bottles	O
@@ -5678,6 +6080,8 @@ all	O
 together	O
 Great	O
 deal	O
+
+
 Wen	brand
 Cleansing	product
 Conditioner	product
@@ -5697,6 +6101,8 @@ BRAND	product_condition
 NEW	product_condition
 NEVER	product_condition
 OPENED	product_condition
+
+
 Coconut	product
 shea	product
 butter	product
@@ -5705,6 +6111,8 @@ toothpaste	product
 Hair	product
 growth	product
 spray	product
+
+
 Bundle	O
 of	O
 2	O
@@ -5744,6 +6152,8 @@ questions	O
 let	O
 me	O
 know	O
+
+
 new	product_condition
 and	product_condition
 never	product_condition
@@ -5757,6 +6167,8 @@ in	O
 the	O
 scent	O
 tropical	O
+
+
 This	O
 has	O
 never	product_condition
@@ -5791,6 +6203,8 @@ it	O
 smells	product_features
 super	product_features
 good	product_features
+
+
 One	O
 70s	O
 herbal	product
@@ -5803,6 +6217,8 @@ bar	product
 One	O
 travel	O
 tin	O
+
+
 Wen	brand
 Pomegranate	product
 cleansing	product
@@ -5813,6 +6229,8 @@ Dean	brand
 16	weight
 oz	weight
 each	O
+
+
 2	O
 New	product_condition
 sealed	product_condition
@@ -5896,6 +6314,8 @@ Depending	O
 on	O
 temperature	O
 outside	O
+
+
 Only	O
 worn	O
 2	O
@@ -5973,6 +6393,8 @@ use	O
 stock	O
 photos	O
 thanks	O
+
+
 WEN	brand
 Pomegranate	product
 Cleansing	product
@@ -5989,6 +6411,8 @@ not	product_features
 included	product_features
 FREE	shipping_details
 SHIPPING	shipping_details
+
+
 Hair	product
 Milk	product
 Nourishing	product
@@ -6010,6 +6434,8 @@ shine	applied_for
 4	O
 perfect	O
 styling	O
+
+
 Redken	brand
 body	product
 full	product
@@ -6025,6 +6451,8 @@ authentic	O
 product	O
 Used	product_condition
 once	product_condition
+
+
 3	O
 8oz	weight
 hair	product
@@ -6043,6 +6471,8 @@ plus	product
 keratin	product
 treatment	product
 4oz	weight
+
+
 Vibrance	O
 hair	O
 Mfg	O
@@ -6100,6 +6530,8 @@ plus	O
 shipping	O
 and	O
 handling	O
+
+
 Monat	brand
 Revive	product
 Shampoo	product
@@ -6107,6 +6539,8 @@ Brand	product_condition
 new	product_condition
 and	product_condition
 sealed	product_condition
+
+
 Brand	hair_condition
 New	hair_condition
  	O
@@ -6173,1194 +6607,3 @@ styling	O
 products	O
 Free	O
 Shipping	O
-Herbal	O
-green	O
-Apply	O
-small	O
-amount	O
-to	O
-scalp	O
-35x	O
-a	O
-week	O
-or	O
-daily	O
-Massage	O
-into	O
-scalp	O
-Leave	O
-on	O
-for	O
-faster	O
-results	O
-Made	O
-with	O
-natural	ingredients
-oils	ingredients
-Olive	ingredients
-coconut	ingredients
-peppermint	ingredients
-Fast	O
-results	O
-in	O
-atleast	O
-2	O
-weeks	O
-MoroccanOil	brand
-Extra	product
-Volume	product
-Shampoo	product
-8.5	weight
-Oz	weight
-Used	O
-handful	O
-of	O
-times	O
-Retails	O
-for	O
-No	category
-Drought	category
-by	O
-Lush	brand
-Dry	product
-shampoo	product
-made	O
-from	O
-natural	ingredients
-ingredients	ingredients
-Like	product_condition
-new	product_condition
-1.9	weight
-oz	weight
-size	O
-10	weight
-oz	weight
-bottle	O
-of	O
-the	O
-its	brand
-a	brand
-10	brand
-is	O
-keratin	product
-leave	product
-in	product
-conditioner	product
-New	product_condition
-Olive	category
-Oil	category
-New	product
-Growth	product
-NO-Lye	product
-Hair	product
-Relaxer	product
-Normal,	product
-8.11	weight
-oz	weight
-The	O
-ORS	brand
-Olive	category
-Oil	category
-Built-In	product
-Protection	product
-New	product
-Growth	product
-No-Lye	product
-Hair	product
-Relaxer	product
-kit	O
-is	O
-light-sized	O
-for	O
-touch-ups,	O
-short	O
-hair	O
-styles,	O
-and	O
-ZONE	O
-RELAXING	O
-retouching	O
-a	O
-target	O
-section	O
-or	O
-zone	O
-of	O
-the	O
-head	O
-Olive	ingredients
-Oil,	ingredients
-historically	O
-known	O
-as	O
-a	O
-healing	product_features
-elixir,	product_features
-is	O
-rich	O
-in	O
-essential	ingredients
-fatty	ingredients
-acids	ingredients
-that	O
-impart	applied_for
-moisture	applied_for
-directly	applied_for
-into	applied_for
-the	applied_for
-scalp	applied_for
-and	applied_for
-hair	applied_for
-shaft	applied_for
-for	applied_for
-stronger,	applied_for
-after	O
-hair	O
-with	O
-beautiful	applied_for
-shine	applied_for
-Hairepair	category
-Scalp	product
-Scrub,	product
-6	weight
-oz	weight
-Pre-shampoo	O
-treatment	O
-gently	O
-exfoliates	applied_for
-the	applied_for
-scalp	applied_for
-to	O
-help	O
-remove	applied_for
-build-up	applied_for
-that	applied_for
-can	applied_for
-clog	applied_for
-follicles	applied_for
-and	O
-inhibit	O
-hair's	O
-ability	O
-to	O
-thrive	O
-Help	O
-fight	applied_for
-hair	applied_for
-loss	applied_for
-and	O
-promote	applied_for
-healthy	applied_for
-hair	applied_for
-growth,	applied_for
-this	O
-scalp-energizing	product_features
-treatment	product_features
-can	O
-be	O
-added	O
-to	O
-any	O
-haircare	O
-routine	O
-to	O
-help	O
-maintain	O
-a	O
-healthy	applied_for
-scalp	applied_for
-and	O
-encourage	applied_for
-healthy-growing	applied_for
-hair	applied_for
-Strengthening	product
-Shampoo	product
-250ml	weight
-8.5	weight
-oz	weight
-New	product_condition
-Never	product_condition
-Used	O
-Sticky	O
-note	O
-took	O
-part	O
-of	O
-paint	O
-under	O
-name	O
-Sells	O
-for	O
-ORS	brand
-Hairepair	category
-Restore	product
-+	product
-Heat	product
-Protect	product
-Multi-Benefit	product
-Serum,	product
-4.3	weight
-fl	weight
-oz	weight
-A	O
-multi-functional	O
-treatment	O
-serum	O
-designed	O
-to	O
-restore	applied_for
-moisture	applied_for
-and	O
-strength	applied_for
-to	applied_for
-damaged	applied_for
-and	applied_for
-heat-styled	applied_for
-hair	applied_for
-with	O
-nourishing	ingredients
-Coconut	ingredients
-Oil,	ingredients
-reparative	ingredients
-Baobab	ingredients
-Protein	ingredients
-and	O
-hair-strengthening	O
-Active	ingredients
-Protein	ingredients
-Complex	ingredients
-while	O
-helping	O
-to	O
-protect	applied_for
-against	applied_for
-damage	applied_for
-from	applied_for
-thermal	applied_for
-styling	applied_for
-tools	applied_for
-NEW	O
-Bundle	O
-of	O
-15	O
-Cream	product
-Conditioner	product
-ORS	brand
-OIL	product
-Salon	product
-Professional	product
-Crème	product
-Relaxer	product
-Normal	product
-1800	weight
-g	weight
-The	O
-ORS	brand
-Olive	category
-Oil	category
-Professional	O
-range	O
-is	O
-enriched	O
-with	O
-olive	ingredients
-oil	ingredients
-and	O
-natural	ingredients
-ingredients	ingredients
-that	O
-cater	O
-to	O
-all	O
-of	O
-your	O
-hair	O
-care	O
-needs	O
-as	O
-administered	O
-by	O
-a	O
-salon	O
-professional	O
-The	O
-results	O
-are	O
-professionally	O
-achieved	O
-beautiful	O
-hair	O
-that	O
-is	O
-silky	O
-and	O
-incredibly	O
-manageable	O
-ORS	brand
-OIL	product
-Salon	product
-Professional	product
-Crème	product
-Relaxer	product
-Normal	product
-18.75oz	weight
-is	O
-a	product_features
-conditioning	product_features
-relaxer	product_features
-enriched	O
-with	O
-Olive	ingredients
-Oil	ingredients
-and	O
-Lanolin	ingredients
-providing	O
-controlled	O
-straightening	applied_for
-protecting	applied_for
-against	O
-over	O
-processing	O
-ORS	brand
-Olive	category
-Oil	category
-Professional	category
-No	product
-Lye	product
-Built	product
-in	product
-Protection	product
-Relaxer	product
-Extra	product
-Strength	product
-twin	O
-pack	O
-238	weight
-g	weight
-	O
-The	O
-ORS	brand
-Olive	product
-Oil	product
-Professional	product
-range	O
-is	O
-enriched	O
-with	O
-olive	ingredients
-oil	ingredients
-and	O
-natural	ingredients
-ingredients	ingredients
-that	O
-cater	O
-to	O
-all	O
-of	O
-your	O
-hair	O
-care	O
-needs	O
-as	O
-administered	O
-by	O
-a	O
-salon	O
-professional	O
-The	O
-results	O
-are	O
-professionally	O
-achieved	O
-beautiful	O
-hair	O
-that	O
-is	O
-silky	O
-and	O
-incredibly	O
-manageable	O
-ORS	brand
-Olive	category
-Oil	category
-No	product
-Lye	product
-Built	product
-in	product
-Protection	product
-Relaxer	product
-Extra	product
-Strength	product
-4	product
-applications	product
-531g	weight
-is	O
-a	O
-revolutionary	O
-system	O
-that	O
-utilizes	O
-olive	ingredients
-oil	ingredients
-to	O
-protect	O
-the	O
-hair	O
-from	O
-damage	O
-during	O
-the	O
-relaxer	O
-process	O
-Extra	O
-strength	O
-is	O
-for	O
-coarse	hair_types
-and	hair_types
-resistant	hair_types
-hair	hair_types
-Provides	O
-continuous	O
-protection	O
-while	O
-straightening	applied_for
-and	applied_for
-providing	applied_for
-long-lasting	applied_for
-shine	applied_for
-Ion	brand
-color	category
-solutions	category
-Purple	product
-shampoo	product
-for	O
-blondes	hair_color
-Used	product_condition
-maybe	product_condition
-twice	product_condition
-Dont	O
-have	O
-blonde	hair_color
-hair	hair_color
-anymore	O
-so	O
-dont	O
-need	O
-it	O
-100%	product_source
-vegan	product_source
-Curls	category
-Unleashed	category
-Curl	product
-Detangling	product
-Shampoo,	product
-8	weight
-fl.oz	weight
-The	O
-ORS	brand
-Curlies	product
-Unleashed	product
-Curl	product
-Detangling	product
-Shampoo	product
-236ml	weight
-is	O
-a	O
-sulfate-free	free_of
-shampoo	O
-containing	O
-none	O
-of	O
-the	O
-nasties	free_of
-but	O
-a	O
-blend	O
-of	O
-nourishing	ingredients
-mango,	ingredients
-refreshing	ingredients
-cucumber	ingredients
-and	O
-other	ingredients
-ingredients	ingredients
-that	O
-help	O
-to	O
-keep	O
-your	O
-little	O
-ones	O
-hair	applied_for
-clean	applied_for
-and	O
-detangled	applied_for
-without	applied_for
-stripping	applied_for
-little	applied_for
-curls	applied_for
-of	applied_for
-their	applied_for
-natural	applied_for
-moisture	applied_for
-Curls	category
-Unleashed	category
-Bodacious	product
-Blue	product
--	product
-Color	product
-Blast	product
-Temporary	product
-Hair	product
-Makeup	product
-Wax	product
-221g	weight
-Curls	category
-Unleashed	category
-Color	product
-Blast	product
-provides	O
-a	O
-temporary	product_features
-color	product_features
-solution,	product_features
-formulated	O
-with	O
-moisturizing	ingredients
-beeswax,	ingredients
-to	O
-elongate	applied_for
-and	applied_for
-define	applied_for
-curls	applied_for
-with	applied_for
-beautiful,	applied_for
-vivid	applied_for
-colors	applied_for
-and	applied_for
-no	applied_for
-damage	applied_for
-Olive	category
-Oil	category
-Smooth	product
-&	product
-Easy	product
-Edges	product
-Strand	product
-Strengthening	product
-Styling,	product
-8.5	weight
-oz	weight
-ORS	brand
-brings	O
-the	O
-power	O
-of	O
-nourishing	O
-Olive	ingredients
-Oil	ingredients
-Plus	O
-the	O
-silky	O
-smoothness	O
-of	O
-Brazilian	ingredients
-Pequi	ingredients
-Oil	ingredients
-for	O
-sleek	O
-hair	O
-and	O
-edges,	O
-luminous	O
-Add	applied_for
-Shine	applied_for
-and	O
-breakage	applied_for
-protection	applied_for
-Pequi	ingredients
-Oil	ingredients
-is	O
-rich	O
-in	O
-vitamins	ingredients
-A&E,	ingredients
-antioxidants	ingredients
-and	O
-natural	ingredients
-fatty	ingredients
-acids	ingredients
-that	O
-penetrate	O
-deep	O
-into	O
-the	O
-hair	O
-to	O
-smooth	applied_for
-your	applied_for
-curls	applied_for
-Experience	O
-long-lasting	O
-hold,	O
-with	O
-no	O
-flaking,	free_of
-no	O
-alcohol	free_of
-and	O
-no	O
-build-up	O
-2	O
-full	O
-size	O
-new	product_condition
-and	product_condition
-never	product_condition
-used	product_condition
-full	O
-size	O
-bedhead	brand
-tigi	product
-dirty	product
-secret	product
-dry	product
-shampoos	product
-6.3oz	weight
-300ml	weight
-each.Retail	O
-at	O
- 	O
-each	O
-Set	O
-retails	O
-at	O
-	O
-No	O
-trades	O
-or	O
-free	O
-shipping	O
-brand	product_condition
-new	product_condition
-ships	shipping_details
-next	shipping_details
-day	shipping_details
-Hair	product
-oil	product
-for	O
-halloween	event
-party	O
-at	O
-home	O
-My	O
-hair	O
-is	O
-black	hair_color
-color	O
-and	O
-usually	O
-pretty	O
-oily	hair_condition
-or	O
-greesy	hair_condition
-Almost	product_condition
-full	product_condition
-about	O
-90	O
-Detox	brand
-Dry	product
-Bar	product
-Dry	product
-Shampoo	product
-for	O
-Brunettes	hair_color
-Full	O
-size	O
-3.2oz	weight
-Recently	O
-been	O
-having	O
-trouble	O
-with	O
-hair	hair_concern
-loss	hair_concern
-and	O
-itchy	hair_concern
-scalp	hair_concern
-With	O
-Christmas	event
-coming	O
-up	O
-if	O
-I	O
-could	O
-find	O
-a	O
-solution	O
-for	O
-my	O
-bright	hair_color
-red	hair_color
-hair	hair_color
-and	O
-is	O
-kinky	hair_types
-Authentic	O
-Included	O
-is	O
-Paul	brand
-Mitchell	brand
-Blonde	O
-1	O
-PillowTalk	O
-Travel	O
-Size	O
-and	O
-1	O
-Wet	product
-Brush	product
-100%	product_source
-cruelty	product_source
-free	product_source
-Color	product
-Blast	product
-Temporary	product
-Hair	product
-Makeup	product
-Wax	product
-for	O
-straight	hair_types
-hair	O
-Sometimes	O
-your	O
-hair	O
-are	O
-color	hair_concern
-damaged	hair_concern
-and	O
-becomes	O
-gray,	hair_concern
-well	O
-not	O
-this	O
-one	O
-It	O
-helps	O
-even	O
-when	O
-you	O
-are	O
-at	O
-a	O
-birthday	event
-party	O
-or	O
-weddings	event
-16	weight
-oz	weight
-unopened	product_condition
-Sealed	product_condition
-Hairepair	category
-Scalp	product
-Scrub,	product
-6	weight
-oz	weight
-Pre-shampoo	O
-treatment	O
-gently	O
-exfoliates	applied_for
-the	O
-scalp	O
-to	O
-help	O
-remove	applied_for
-build-up	applied_for
-that	O
-can	O
-clog	hair_concern
-follicles	hair_concern
-and	O
-inhibit	O
-hair's	O
-ability	O
-to	O
-thrive	O
-Great	O
-for	O
-copper	hair_color
-hair	O
-New	O
-12oz	weight
-treatment	O
-refill	O
-Mommy	product
-and	product
-Me:	product
-Straightening	product
-and	product
-Styling	product
-Kit	product
-Best	O
-gift	O
-for	O
-Mother's	event
-day	event
-that	O
-will	O
-help	O
-your	O
-mom	O
-with	O
-gray	hair_concern
-hair	O
-and	O
-hair	hair_concern
-loss	hair_concern
-Brandnew	O
-dry	product
-shampoo	product
-Never	hair_condition
-been	hair_condition
-used	hair_condition
-I	O
-got	O
-it	O
-from	O
-a	O
-birch	O
-box	O
-Hairepair	category
-Carrot	product
-Oil,	product
-6	weight
-oz	weight
-Lightweight	O
-petroleum-free	free_of
-and	O
-mineral	free_of
-oil-free	free_of
-therapeutic	product_features
-crme	product_features
-for	O
-all	O
-occasions,	O
-anniversary,	event
-workday	event
-Best	O
-results	O
-shown	O
-in	O
-braids	hair_types
-Found	O
-to	O
-be	O
-color	product_features
-safe	product_features
-4	O
-dry	product
-shampoos	product
-2	O
-simple	O
-wipes	product
-Olive	category
-Oil	category
-No	product
-Lye	product
-Conditioning	product
-Hair	product
-Relaxer	product
-System	product
-formulated	O
-with	O
-built-in	product_features
-protection	product_features
-to	O
-prevent	O
-over	hair_concern
-processing	hair_concern
-as	O
-it	O
-gently	O
-relaxes	applied_for
-and	O
-smooths	applied_for
-the	O
-hair	O
-Rich	O
-Olive	ingredients
-and	O
-Avocado	ingredients
-Oils	ingredients
-moisturize	applied_for
-and	O
-condition	applied_for
-while	O
-Aloe	ingredients
-Vera	ingredients
-protects	O
-the	O
-skin	O
-and	O
-scalp	O
-The	O
-end	O
-result	O
-is	O
-silkier,	O
-softer	applied_for
-hair	applied_for
-that	O
-is	O
-easier	O
-to	O
-detangles	applied_for
-and	O
-care	O
-for	O
-16fl	weight
-oz	weight
-cleansing	product
-conditioner	product
-by	O
-Chaz	brand
-Dean	brand
-make	O
-your	O
-hair	O
-incredibly	applied_for
-soft	applied_for
-Soft	product
-Curls	product
-No-Lye	product
-Creme	product
-Texture	product
-Softening	product
-System	product
-Formulated	O
-with	O
-curl	hair_types
-loving	O
-ingredients	O
-like	O
-Shea	ingredients
-Butter,	ingredients
-Coconut	ingredients
-and	O
-Olive	ingredients
-Oil	ingredients
-Uses	O
-the	O
-latest	O
-technology	O
-to	O
-safely	O
-elongate	O
-tight	applied_for
-coils,	applied_for
-leaving	O
-curls	applied_for
-softer	applied_for
-and	O
-more	applied_for
-manageable	applied_for
-Brown	hair_color
-hair	hair_color
-is	O
-best	O
-for	O
-this	O
-product	O
-I	O
-need	O
-a	O
-dry	product
-shampoo	product
-for	product
-curly	hair_types
-hair	O
-13.0	weight
-fl	weight
-oz	weight
-Cream	O
-to	O
-help	O
-with	O
-greasy	hair_condition
-hair	O
-You	O
-have	O
-have	O
-this	O
-on	O
-even	O
-at	O
-dinner	event
-or	O
-lunch	event
-I	O
-presented	O
-the	O
-mother	O
-with	O
-a	O
-kinky	hair_types
-hair	product
-cream	product
-on	O
-her	O
-baby	event
-shower	event
-Leave-in	product
-conditioner	product
-10	weight
-oz	weight
-bottle	O
-Product	O
-comes	O
-with	O
-a	O
-wet	product_features
-brush	product_features
-and	O
-a	O
-pump	container_type
-Independence	event
-day	event
-calls	O
-for	O
-braids	hair_types
-so	O
-you	O
-can	O
-march	O
-with	O
-confidence	O
-1.7	weight
-oz	weight
-retails	O
-for	O
-10.99	O
-at	O
-Target	brand
-Black	product
-Olive	product
-Oil	product
-Repair7	product
-Leave	product
-In	product
-Treatment	product
-Oil	product
-for	O
-grayness	hair_concern
-in	O
-your	O
-hair	O
-It	O
-still	O
-maintains	O
-your	O
-hair	O
-even	O
-if	O
-you	O
-are	O
-playing	O
-sports,	event
-swimming	event
-or	O
-at	O
-office	event
-Brand	product_condition
-new	product_condition
-Ordered	O
-the	O
-wrong	O
-one	O
-Dog	O
-not	O
-included	O
-Ors	brand
-Olive	product
-Oil	product
-For	product
-natural	product
-Butter	product
-bliss	product
-Shampoo	product
-works	O
-on	O
-kinky	hair_types
-hair	O
-Kinkiness	hair_types
-in	O
-the	O
-hair	O
-is	O
-maintained	O
-Cleanses	product_features
-without	O
-stripping	O
-hair	O
-of	O
-moisture	O
-Monoi	product
-Oil	product
-Anti-Breakage	product
-Leave-In	product
-Conditioning	product
-CreÌ€me	product
-Hairepair	category
-fertilizing	product
-Temple	product
-balm,	product
-2	weight
-oz	weight
-Intensive	O
-herbal-rich	product_features
-treatment	product_features
-balm	product_features
-nourishes	applied_for
-and	O
-revitalizes	applied_for
-edges	applied_for
-and	applied_for
-scalp	applied_for
-to	O
-promote	O
-healthy	O
-hair	applied_for
-growth	applied_for
-Brand	product_condition
-New	product_condition
-Fairy	brand
-Tales	brand
-Lice	product_features
-Prevention	product_features
-Conditioning	product
-Spray	product
-ORS	brand
-Olive	category
-Oil	category
-
-	category
-heat	product
-Protection	product
-serum,	product
-6	weight
-fl.oz	weight
-repairs	O
-heat	hair_concern
-damaged	hair_concern
-hair	O
-and	O
-works	O
-on	O
-both	O
-curly	hair_types
-and	O
-wavy	hair_types
-hair	O
-
-

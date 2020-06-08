@@ -102,8 +102,14 @@
                         </div>
                         <div class="form-row">
                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="files" name="files" accept="*" required>
-                              <label class="custom-file-label" for="customFile">Choose file</label>
+                              <input type="file" class="custom-file-input" id="trainFiles" name="trainFiles" accept="*" required>
+                              <label class="custom-file-label" for="customFile">Choose Training file(s)</label>
+                           </div>
+                        </div>
+                        <div class="form-row mt-2">
+                           <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="testFiles" name="testFiles" accept="*" required>
+                              <label class="custom-file-label" for="customFile">Choose Test file(s)</label>
                            </div>
                         </div>
                         
@@ -145,7 +151,7 @@
                               </tr>
                            </thead>
                            <tbody id="job-history">
-                              <tr
+                              <tr th:onclick="|fetch_details(${item.execution_id})|"
                                  th:id = "${'job_'+item.execution_id}"
                                  th:each="item, iStat : ${items}">
                                  <td th:text="${item.execution_id}" />
@@ -164,14 +170,19 @@
                
                </div>
                
-               <div class="row p-2 mb-5">
-                	<div class="col shadow border-secondary rounded m-4">
-               		 	<h2 class="">Training Details</h2>
-               		 	<canvas id="scatterChart"></canvas>
+               
+               <div class="row p-2 shadow border-secondary rounded m-4">
+                	<div class="col-md-4 col-sm-6  m-4">
+               		 	<h2 class="text-center">Training Details</h2>
                		 </div>
-               		 <!-- <div class="">
-               		 	<canvas id="scatterChart"></canvas>
-               		 </div> -->
+                	<div class="col-md-7 col-sm-6  m-4">
+               		 	<h4>Gradient Norm</h4>
+               		 	<div class="card">
+			                <div class="card-body">
+			                    <canvas id="chLine"></canvas>
+			                </div>
+			            </div>
+               		 </div>
                </div>
                
                
@@ -187,156 +198,81 @@
       <!-- Bootstrap core JavaScript -->
       <script src="vendor/jquery/jquery.min.js"></script>
       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+      
 	  <!-- Custom script-->
 	  <script src="js/common.js"></script>
 	  
 	  <script>
 
+		// chart colors
+		var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
 
-	  var ctxSc = document.getElementById('scatterChart').getContext('2d');
-	  var scatterData = {
-	      datasets: [{
-	          borderColor: 'rgba(99,0,125, .2)',
-	          backgroundColor: 'rgba(99,0,125, .5)',
-	          label: 'V(node2)',
-	          data: [{
-	              x: 1,
-	              y: -1.711e-2,
-	          }, {
-	              x: 1.26,
-	              y: -2.708e-2,
-	          }, {
-	              x: 1.58,
-	              y: -4.285e-2,
-	          }, {
-	              x: 2.0,
-	              y: -6.772e-2,
-	          }, {
-	              x: 2.51,
-	              y: -1.068e-1,
-	          }, {
-	              x: 3.16,
-	              y: -1.681e-1,
-	          }, {
-	              x: 3.98,
-	              y: -2.635e-1,
-	          }, {
-	              x: 5.01,
-	              y: -4.106e-1,
-	          }, {
-	              x: 6.31,
-	              y: -6.339e-1,
-	          }, {
-	              x: 7.94,
-	              y: -9.659e-1,
-	          }, {
-	              x: 10.00,
-	              y: -1.445,
-	          }, {
-	              x: 12.6,
-	              y: -2.110,
-	          }, {
-	              x: 15.8,
-	              y: -2.992,
-	          }, {
-	              x: 20.0,
-	              y: -4.102,
-	          }, {
-	              x: 25.1,
-	              y: -5.429,
-	          }, {
-	              x: 31.6,
-	              y: -6.944,
-	          }, {
-	              x: 39.8,
-	              y: -8.607,
-	          }, {
-	              x: 50.1,
-	              y: -1.038e1,
-	          }, {
-	              x: 63.1,
-	              y: -1.223e1,
-	          }, {
-	              x: 79.4,
-	              y: -1.413e1,
-	          }, {
-	              x: 100.00,
-	              y: -1.607e1,
-	          }, {
-	              x: 126,
-	              y: -1.803e1,
-	          }, {
-	              x: 158,
-	              y: -2e1,
-	          }, {
-	              x: 200,
-	              y: -2.199e1,
-	          }, {
-	              x: 251,
-	              y: -2.398e1,
-	          }, {
-	              x: 316,
-	              y: -2.597e1,
-	          }, {
-	              x: 398,
-	              y: -2.797e1,
-	          }, {
-	              x: 501,
-	              y: -2.996e1,
-	          }, {
-	              x: 631,
-	              y: -3.196e1,
-	          }, {
-	              x: 794,
-	              y: -3.396e1,
-	          }, {
-	              x: 1000,
-	              y: -3.596e1,
-	          }]
-	      }]
-	  }
-
-	  var config1 = new Chart.Scatter(ctxSc, {
-	      data: scatterData,
-	      options: {
-	          title: {
-	              display: true,
-	              text: 'Scatter Chart - Logarithmic X-Axis'
-	          },
-	          scales: {
-	              xAxes: [{
-	                  type: 'logarithmic',
-	                  position: 'bottom',
-	                  ticks: {
-	                      userCallback: function(tick) {
-	                          var remain = tick / (Math.pow(10, Math.floor(Chart.helpers.log10(tick))));
-	                          if (remain === 1 || remain === 2 || remain === 5) {
-	                              return tick.toString() + 'Hz';
-	                          }
-	                          return '';
-	                      },
-	                  },
-	                  scaleLabel: {
-	                      labelString: 'Frequency',
-	                      display: true,
-	                  }
-	              }],
-	              yAxes: [{
-	                  type: 'linear',
-	                  ticks: {
-	                      userCallback: function(tick) {
-	                          return tick.toString() + 'dB';
-	                      }
-	                  },
-	                  scaleLabel: {
-	                      labelString: 'Voltage',
-	                      display: true
-	                  }
-	              }]
-	          }
-	      }
-	  });
+		/* large line chart */
+		var chLine = document.getElementById("chLine");
 	  
+	  
+		function fetch_details(jobId) {
+			$.ajax({
+				url: '/training/ner/' + jobId,
+				type: 'GET',
+				contentType: "application/json",
+				success: function (response) {
+					//var returnedData = JSON.parse(response);
+					console.log(response);
+					setTimeout(function () {
+						//console.log('#status_' + response.jobDetail.execution_id);
+						//console.log(response.jobDetail.job_status);
+						//$('#status_' + response.jobDetail.execution_id).html(response.jobDetail.job_status)
+						
+						
+						  var chartData = {
+						  labels: [...Array(response.jobDetail.gradNorm.length).keys()].map(x => x++),
+						  datasets: [{
+						    data: response.jobDetail.gradNorm,
+						    backgroundColor: 'transparent',
+						    borderColor: colors[0],
+						    borderWidth: 1,
+						    pointBackgroundColor: colors[0],
+						    pointRadius:1
+						  }]
+						};
+						if (chLine) {
+						  new Chart(chLine, {
+						  type: 'line',
+						  data: chartData,
+						  options: {
+						    scales: {
+						      xAxes: [{
+						        ticks: {
+						        	autoSkip: true,
+						            maxTicksLimit: 20,
+						          beginAtZero: false
+						        }
+						      }]
+						    },
+						    legend: {
+						      display: false
+						    },
+						    responsive: true
+						  }
+						  });
+						}
+						
+						
+					}, 10);
+
+
+				},
+				error: function (error) {
+					console.log(error);
+				}
+			});
+		};
+	  
+
+	
 	  
 		</script>
 	  
