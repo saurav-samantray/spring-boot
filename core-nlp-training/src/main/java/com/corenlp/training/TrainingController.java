@@ -74,8 +74,8 @@ public class TrainingController {
 
 		try {
 			//upload training file to temp folder
-			String trainFilePath = saveUploadedFiles(requestBody.getTrainFiles());
-			String testFilePath = saveUploadedFiles(requestBody.getTestFiles());
+			String trainFilePath = CustomIOUtils.saveUploadedFiles(requestBody.getTrainFiles(),UPLOAD_DIR);
+			String testFilePath = CustomIOUtils.saveUploadedFiles(requestBody.getTestFiles(),UPLOAD_DIR);
 			if(trainFilePath == null) {
 				dr.setErrorMessage("File not found or not provided");
 				dr.setSuccess(false);
@@ -161,30 +161,6 @@ public class TrainingController {
 		return response;
 	}
 
-	// Save Files
-	private String saveUploadedFiles(MultipartFile[] files) throws FileNotFoundException, IOException {
-
-		// Make sure directory exists!
-		File uploadDir = new File(UPLOAD_DIR);
-		uploadDir.mkdirs();
-
-
-		String uploadFilePath = null;
-
-		for (MultipartFile file : files) {
-
-			if (file.isEmpty()) {
-				throw new FileNotFoundException();
-			}
-			uploadFilePath = UPLOAD_DIR + "/" + file.getOriginalFilename();
-
-			byte[] bytes = file.getBytes();
-			Path path = Paths.get(uploadFilePath);
-			Files.write(path, bytes);
-
-
-		}
-		return uploadFilePath;
-	}
+	
 
 }

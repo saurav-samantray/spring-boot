@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Data Visualization | CoreNLP</title>
+<!-- Google Fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+	rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/simple-sidebar.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="d-flex" id="wrapper">
+         <!-- Sidebar -->
+         <!--  <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Core NLP</div>
+            <div class="list-group list-group-flush">
+               <a href="#" class="list-group-item list-group-item-action bg-light">Trainings</a>
+            </div>
+            </div> -->
+         <!-- /#sidebar-wrapper -->
+         <!-- Page Content -->
+         <div id="page-content-wrapper">
+            <!-- ======= Header ======= -->
+            <header id="header" class="fixed-top ">
+               <div class="container d-flex align-items-center">
+                  <!-- <a href="index.html" class="logo mr-auto"><img src="{{ url_for('static', filename='images/ml-upakaranna.png') }}" alt="" class="img-fluid"></a> -->
+                  <h1 class="logo m-auto"><a href="/">CoreNLP Dashboard</a></h1>
+               </div>
+            </header>
+            <!-- End Header -->
+            <div class="container-fluid mt-5">
+               <div id="trainingToast" role="alert" aria-live="assertive" aria-atomic="true" class="toast">
+                  <div class="toast-body">
+                     <span id="toast-message">This is a toast message.</span>
+                     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+               </div>
+               
+               <!-- Modal: modalCart -->
+               <div class="modal fade" id="modalDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+                        <!--Header-->
+                        <div class="modal-header">
+                           <h4 class="col-12 modal-title text-center" id="myModalLabel" style="color: #fff;">Training Details</h4>
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">×</span>
+                           </button>
+                        </div>
+                        <!--Body-->
+                        <div class="modal-body">
+                        	 <h6 id="model-jobId">Job Id: </h6>
+                        	 <h6 id="model-status">Status: </h6>
+                        	 <h6 id="model-type">Type: NER</h6>
+                        	 <!-- <h4 id="model-name">Model Name:</h4> -->
+                           	 <h6 class="text-center">Gradient Norm</h6>
+		                     <div class="card">
+		                        <div class="card-body">
+		                           <canvas id="chLine"></canvas>
+		                        </div>
+		                     </div>
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                           <button class="btn btn-primary download" data-value="1">Download Model</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Modal: modalCart -->
+               
+               
+               <div class="row p-2">
+                  <div class="col-md-4 col-sm-6 shadow border-secondary rounded m-4">
+                     <div class="row m-1">
+                        <h2 class="">Data Visualization</h2>
+                     </div>
+                     <form id="new-data-form" enctype="multipart/form-data" class="needs-validation" method="POST">
+                        <div class="form-row">
+                           <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="dataFiles" name="dataFiles" accept="*" required>
+                              <label class="custom-file-label" for="customFile">Choose Data file</label>
+                           </div>
+                        </div>
+                        <div class="form-row mt-2">
+                           <button id="data-viz" style="width: 100px;" type="submit" class="btn btn-primary mb-2">Process</button>
+                        </div>
+                     </form>
+                  </div>
+                  <div class="col-md-7 col-sm-6 shadow border-secondary rounded m-4">
+                     <div class="row m-1">
+                        <h2>Visual Wizard</h2>
+                     </div>
+                     <div id="bar-container" class="row m-1">
+                        <canvas id="bar-chart" width="800" height="450"></canvas>
+                     </div>
+                  </div>
+               </div>
+               <div id="pie-chart-container" class="row p-2 shadow border-secondary rounded m-4">
+                  <canvas id="pie-chart" width="800" height="450"></canvas>
+               </div>
+               <hr>
+            </div>
+         </div>
+         <!-- /#page-content-wrapper -->
+      </div>
+      <!-- /#wrapper -->
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+      <!-- Custom script-->
+       <script src="js/common.js"></script>
+      <script src="js/viz.js"></script>
+      <script>
+   	
+      </script>
+</body>
+</html>

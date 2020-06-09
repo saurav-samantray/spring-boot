@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+	
 
 	//Adding file name to upload panel
 	$(".custom-file-input").on("change", function () {
@@ -29,10 +30,10 @@ $( document ).ready(function() {
 						history_update = history_update +
 						"<tr onclick='fetch_details("+value['execution_id']+")' id='job_" + value['execution_id'] + "'>" +
 						"<td>" + value['execution_id'] + "</td>" +
-						"<td>NER</td>"+
+						"<td class='d-none d-sm-table-cell'>NER</td>"+
 						"<td id='status_" + value['execution_id'] + "'>" + value['job_status'] + "</td>" +
-						"<td class='d-none d-sm-table-cell'><button "+disabled+" id='refresh_" + value['execution_id'] + "' type='button' class='btn btn-primary jobrefresh' data-value=" + value['execution_id'] + ">refresh</button></td>" +
-						"<td class='d-none d-sm-table-cell'><button id='download_" + value['execution_id'] + "' type='button' class='btn btn-primary download' data-value=" + value['execution_id'] + ">download</button></td>" +
+						"<td><button "+disabled+" id='refresh_" + value['execution_id'] + "' type='button' class='btn btn-primary jobrefresh' data-value=" + value['execution_id'] + ">refresh</button></td>" +
+						"<td class='d-none d-sm-table-cell'><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#modalDetails' data-value=" + value['execution_id'] + ">Details</button></td>" +
 						"</tr>"
 					});
 
@@ -66,7 +67,7 @@ $( document ).ready(function() {
 
 			var formData = new FormData(form);
 
-			console.log("upload data: " + formData['model_name']);
+			//console.log("upload data: " + formData['model_name']);
 
 
 			$.ajax({
@@ -156,3 +157,120 @@ $( document ).ready(function() {
 	});
 
 });
+
+
+
+//chart colors
+var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
+
+/* large line chart */
+var chLine = document.getElementById("chLine");
+
+function blank_chart(){
+	var chartData = {
+			  labels: [],
+			  datasets: [{
+			    data: [],
+			    backgroundColor: 'transparent',
+			    borderColor: colors[0],
+			    borderWidth: 1,
+			    pointBackgroundColor: colors[0],
+			    pointRadius:1
+			  }]
+			};
+	if (chLine) {
+		  new Chart(chLine, {
+		  type: 'line',
+		  data: chartData,
+		  options: {
+		    scales: {
+		      xAxes: [{
+		        ticks: {
+		        	autoSkip: true,
+		            maxTicksLimit: maxTicksLimit,
+		            beginAtZero: false,
+		            maxRotation: 0,
+                   minRotation: 0
+		        }
+		      }]
+		    },
+		    legend: {
+		      display: false
+		    },
+		    responsive: true
+		  }
+		  });
+		}
+}
+
+function fetch_details(jobId) {
+	//blank_chart()
+ 	$.ajax({
+ 		url: '/training/ner/' + jobId,
+ 		type: 'GET',
+ 		contentType: "application/json",
+ 		success: function (response) {
+ 			//var returnedData = JSON.parse(response);
+ 			console.log(response);
+ 			setTimeout(function () {
+ 				//console.log('#status_' + response.jobDetail.execution_id);
+ 				//console.log(response.jobDetail.job_status);
+ 				//$('#status_' + response.jobDetail.execution_id).html(response.jobDetail.job_status)
+ 				
+ 				var maxTicksLimit = 20
+ 				if(response.jobDetail.gradNorm.length > 60){
+ 					maxTicksLimit = 10
+ 				}
+ 				
+ 				  $('.download').attr("data-value",response.jobDetail.execution_id)
+ 				  $('#model-jobId').html("Job Id: "+response.jobDetail.execution_id)
+ 				  $('#model-status').html("Status: "+response.jobDetail.job_status)
+ 				  //$('#model-jobId').append(response.jobDetail.execution_id)
+ 				  
+ 				  
+ 				  
+ 				  var chartData = {
+ 				  labels: [...Array(response.jobDetail.gradNorm.length).keys()].map(x => x++),
+ 				  datasets: [{
+ 				    data: response.jobDetail.gradNorm,
+ 				    backgroundColor: 'transparent',
+ 				    borderColor: colors[0],
+ 				    borderWidth: 1,
+ 				    pointBackgroundColor: colors[0],
+ 				    pointRadius:1
+ 				  }]
+ 				};
+ 				if (chLine) {
+ 				  new Chart(chLine, {
+ 				  type: 'line',
+ 				  data: chartData,
+ 				  options: {
+ 				    scales: {
+ 				      xAxes: [{
+ 				        ticks: {
+ 				        	autoSkip: true,
+ 				            maxTicksLimit: maxTicksLimit,
+ 				            beginAtZero: false,
+ 				            maxRotation: 0,
+ 		                    minRotation: 0
+ 				        }
+ 				      }]
+ 				    },
+ 				    legend: {
+ 				      display: false
+ 				    },
+ 				    responsive: true
+ 				  }
+ 				  });
+ 				}
+ 				
+ 				
+ 			}, 10);
+ 
+ 
+ 		},
+ 		error: function (error) {
+ 			console.log(error);
+ 		}
+ 	});
+ };

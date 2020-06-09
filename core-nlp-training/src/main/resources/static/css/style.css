@@ -25,7 +25,7 @@ th, td {
 	background: rgba(40, 58, 90, 0.9);
 }
 
-#header.header-scrolled, #header.header-inner-pages {
+#header.header-scrolled, #header.header-inner-pages, .modal-header {
 	background: rgba(40, 58, 90, 0.9);
 }
 

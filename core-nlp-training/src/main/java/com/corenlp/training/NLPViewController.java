@@ -1,7 +1,6 @@
 package com.corenlp.training;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.batch.core.JobInstance;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.corenlp.training.pojo.response.JobDetail;
 
 @Controller
-public class TrainingViewController {
+public class NLPViewController {
 	
 	@Autowired
 	JobExplorer jobExplorer;
@@ -38,5 +37,10 @@ public class TrainingViewController {
 		
 		model.addAttribute("items", items);
 		return "home";
+	}
+	
+	@GetMapping("/data")
+	public String dataHome(Model model) {
+		return "data";
 	}
 }

@@ -6,40 +6,34 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <title>CoreNLP | Training Home</title>
-      
       <!-- Google Fonts -->
-  	  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-      
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
       <!-- Bootstrap core CSS -->
       <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
       <!-- Custom styles for this template -->
       <link href="css/simple-sidebar.css" rel="stylesheet">
       <link href="css/style.css" rel="stylesheet">
-      
-      
    </head>
    <body>
       <div class="d-flex" id="wrapper">
          <!-- Sidebar -->
-        <!--  <div class="bg-light border-right" id="sidebar-wrapper">
+         <!--  <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">Core NLP</div>
             <div class="list-group list-group-flush">
                <a href="#" class="list-group-item list-group-item-action bg-light">Trainings</a>
             </div>
-         </div> -->
+            </div> -->
          <!-- /#sidebar-wrapper -->
          <!-- Page Content -->
          <div id="page-content-wrapper">
-
-		  <!-- ======= Header ======= -->
-		  <header id="header" class="fixed-top ">
-		    <div class="container d-flex align-items-center">
-		      <!-- <a href="index.html" class="logo mr-auto"><img src="{{ url_for('static', filename='images/ml-upakaranna.png') }}" alt="" class="img-fluid"></a> -->
-		      <h1 class="logo m-auto"><a href="/">CoreNLP Dashboard</a></h1>
-		
-		    </div>
-		  </header><!-- End Header -->
-         	
+            <!-- ======= Header ======= -->
+            <header id="header" class="fixed-top ">
+               <div class="container d-flex align-items-center">
+                  <!-- <a href="index.html" class="logo mr-auto"><img src="{{ url_for('static', filename='images/ml-upakaranna.png') }}" alt="" class="img-fluid"></a> -->
+                  <h1 class="logo m-auto"><a href="/">CoreNLP Dashboard</a></h1>
+               </div>
+            </header>
+            <!-- End Header -->
             <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,16 +60,53 @@
                      </li>
                   </ul>
                </div>
-            </nav> -->
+               </nav> -->
             <div class="container-fluid mt-5">
-                  <div id="trainingToast" role="alert" aria-live="assertive" aria-atomic="true" class="toast">
-                     <div class="toast-body">
-                        <span id="toast-message">This is a toast message.</span>
-                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
+               <div id="trainingToast" role="alert" aria-live="assertive" aria-atomic="true" class="toast">
+                  <div class="toast-body">
+                     <span id="toast-message">This is a toast message.</span>
+                     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+               </div>
+               
+               <!-- Modal: modalCart -->
+               <div class="modal fade" id="modalDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+                        <!--Header-->
+                        <div class="modal-header">
+                           <h4 class="col-12 modal-title text-center" id="myModalLabel" style="color: #fff;">Training Details</h4>
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">×</span>
+                           </button>
+                        </div>
+                        <!--Body-->
+                        <div class="modal-body">
+                        	 <h6 id="model-jobId">Job Id: </h6>
+                        	 <h6 id="model-status">Status: </h6>
+                        	 <h6 id="model-type">Type: NER</h6>
+                        	 <!-- <h4 id="model-name">Model Name:</h4> -->
+                           	 <h6 class="text-center">Gradient Norm</h6>
+		                     <div class="card">
+		                        <div class="card-body">
+		                           <canvas id="chLine"></canvas>
+		                        </div>
+		                     </div>
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                           <button class="btn btn-primary download" data-value="1">Download Model</button>
+                        </div>
                      </div>
                   </div>
+               </div>
+               <!-- Modal: modalCart -->
+               
+               
                <div class="row p-2">
                   <div class="col-md-4 col-sm-6 shadow border-secondary rounded m-4">
                      <div class="row m-1">
@@ -97,7 +128,7 @@
                               <div class="input-group-prepend">
                                  <div class="input-group-text">tolerance</div>
                               </div>
-                              <input type="text" class="form-control" name="tolerance" id="tolerance" value="0.5" required>
+                              <input type="text" class="form-control" name="tolerance" id="tolerance" value="0.0005" required>
                            </div>
                         </div>
                         <div class="form-row">
@@ -112,29 +143,25 @@
                               <label class="custom-file-label" for="customFile">Choose Test file(s)</label>
                            </div>
                         </div>
-                        
                         <div class="form-row mt-2">
-                        <div class="form-check form-check-inline">
-						  <input checked class="form-check-input" type="radio" name="training_type" id="training_type1" value="ner">
-						  <label class="form-check-label" for="inlineRadio1">NER</label>
-						</div>
-						<div class="form-check form-check-inline">
-						  <input class="form-check-input" type="radio" name="training_type" id="training_type2" value="sentiment">
-						  <label class="form-check-label" for="inlineRadio2">Sentiment</label>
-						</div>
-						<div class="form-check form-check-inline">
-						  <input class="form-check-input" type="radio" name="training_type" id="training_type3" value="pos" disabled>
-						  <label class="form-check-label" for="inlineRadio3">POS (disabled)</label>
-						</div>
-                        
+                           <div class="form-check form-check-inline">
+                              <input checked class="form-check-input" type="radio" name="training_type" id="training_type1" value="ner">
+                              <label class="form-check-label" for="inlineRadio1">NER</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="training_type" id="training_type2" value="sentiment">
+                              <label class="form-check-label" for="inlineRadio2">Sentiment</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="training_type" id="training_type3" value="pos" disabled>
+                              <label class="form-check-label" for="inlineRadio3">POS (disabled)</label>
+                           </div>
                         </div>
-                        
                         <div class="form-row mt-2">
                            <button id="new-training" style="width: 100px;" type="submit" class="btn btn-primary mb-2">Execute</button>
                         </div>
                      </form>
                   </div>
-                  
                   <div class="col-md-7 col-sm-6 shadow border-secondary rounded m-4">
                      <div class="row m-1">
                         <h2>Training History (Last 5)</h2>
@@ -144,10 +171,10 @@
                            <thead style="background-color: #37517e; color: #fff; ">
                               <tr>
                                  <th>Job Id</th>
-                                 <th>Type</th>
+                                 <th class="d-none d-sm-table-cell">Type</th>
                                  <th>Status</th>
                                  <th class="d-none d-sm-table-cell">Refresh Status</th>
-                                 <th class="d-none d-sm-table-cell">Download Model</th>
+                                 <th>Details</th>
                               </tr>
                            </thead>
                            <tbody id="job-history">
@@ -155,126 +182,44 @@
                                  th:id = "${'job_'+item.execution_id}"
                                  th:each="item, iStat : ${items}">
                                  <td th:text="${item.execution_id}" />
-                                 <td th:text="NER" />
+                                 <td class="d-none d-sm-table-cell" th:text="NER" />
                                  <td th:id = "${'status_'+item.execution_id}" th:text="${item.job_status}" />
                                  <td class="d-none d-sm-table-cell"><button th:disabled="${item.job_status == 'COMPLETED'}" th:attr="data-value=${item.execution_id}" th:id="${'refresh_'+item.execution_id}" type="button" class="btn btn-primary jobrefresh">refresh</button></td>
-                                 <td class="d-none d-sm-table-cell"><button th:attr="data-value=${item.execution_id}" th:id="${'download_'+item.execution_id}" type="button" class="btn btn-primary download">download</button></td>
+                                 <td><button th:attr="data-value=${item.execution_id}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails">Details</button></td>
                               </tr>
                            </tbody>
                         </table>
                      </div>
                   </div>
-               
-               
-               
-               
                </div>
-               
-               
-               <div class="row p-2 shadow border-secondary rounded m-4">
-                	<div class="col-md-4 col-sm-6  m-4">
-               		 	<h2 class="text-center">Training Details</h2>
-               		 </div>
-                	<div class="col-md-7 col-sm-6  m-4">
-               		 	<h4>Gradient Norm</h4>
-               		 	<div class="card">
-			                <div class="card-body">
-			                    <canvas id="chLine"></canvas>
-			                </div>
-			            </div>
-               		 </div>
-               </div>
-               
-               
+               <!-- <div class="row p-2 shadow border-secondary rounded m-4">
+                  
+                  <div class="col-md-4 col-sm-6  m-4">
+                     <h2 class="text-center">Training Details</h2>
+                  </div>
+                  <div class="col-md-7 col-sm-6  m-4">
+                     <h4>Gradient Norm</h4>
+                     <div class="card">
+                        <div class="card-body">
+                           <canvas id="chLine"></canvas>
+                        </div>
+                     </div>
+                  </div>
+               </div> -->
                <hr>
-               
-               
             </div>
          </div>
          <!-- /#page-content-wrapper -->
       </div>
       <!-- /#wrapper -->
-      
       <!-- Bootstrap core JavaScript -->
       <script src="vendor/jquery/jquery.min.js"></script>
       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-      
-	  <!-- Custom script-->
-	  <script src="js/common.js"></script>
-	  
-	  <script>
-
-		// chart colors
-		var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
-
-		/* large line chart */
-		var chLine = document.getElementById("chLine");
-	  
-	  
-		function fetch_details(jobId) {
-			$.ajax({
-				url: '/training/ner/' + jobId,
-				type: 'GET',
-				contentType: "application/json",
-				success: function (response) {
-					//var returnedData = JSON.parse(response);
-					console.log(response);
-					setTimeout(function () {
-						//console.log('#status_' + response.jobDetail.execution_id);
-						//console.log(response.jobDetail.job_status);
-						//$('#status_' + response.jobDetail.execution_id).html(response.jobDetail.job_status)
-						
-						
-						  var chartData = {
-						  labels: [...Array(response.jobDetail.gradNorm.length).keys()].map(x => x++),
-						  datasets: [{
-						    data: response.jobDetail.gradNorm,
-						    backgroundColor: 'transparent',
-						    borderColor: colors[0],
-						    borderWidth: 1,
-						    pointBackgroundColor: colors[0],
-						    pointRadius:1
-						  }]
-						};
-						if (chLine) {
-						  new Chart(chLine, {
-						  type: 'line',
-						  data: chartData,
-						  options: {
-						    scales: {
-						      xAxes: [{
-						        ticks: {
-						        	autoSkip: true,
-						            maxTicksLimit: 20,
-						          beginAtZero: false
-						        }
-						      }]
-						    },
-						    legend: {
-						      display: false
-						    },
-						    responsive: true
-						  }
-						  });
-						}
-						
-						
-					}, 10);
-
-
-				},
-				error: function (error) {
-					console.log(error);
-				}
-			});
-		};
-	  
-
-	
-	  
-		</script>
-	  
+      <!-- Custom script-->
+      <script src="js/common.js"></script>
+      <script>
+          
+      </script>
    </body>
 </html>
