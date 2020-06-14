@@ -30,7 +30,7 @@ $( document ).ready(function() {
 			timeout: 1000000,
 			success: function (response) {
 				//var returnedData = JSON.parse(response);
-				console.log(Array.from({length: response.data.labels.length}, () => Math.floor(Math.random()*16777215).toString(16)));
+				console.log(response);
 				// Bar chart
 				
 				var colorArray = Array.from({length: response.data.labels.length}, () => "#"+Math.floor(Math.random()*16777215).toString(16));

@@ -37,14 +37,23 @@ public class DataController {
 		if(requestBody.getDataFiles() != null && requestBody.getDataFiles().length >0) {
 			String dataFilePath = CustomIOUtils.saveUploadedFiles(requestBody.getDataFiles(),UPLOAD_DIR);
 			List<?> labels = CustomIOUtils.getStringColumnFromCSV(dataFilePath, 1, "\t");
+			List<?> distinctLabels = CustomIOUtils.getDistinctLabelCountFromCSV(dataFilePath, 1, "\t");
 			logger.info(labels.toString());
-			Map<String, Long> labelCountMaps = (Map<String, Long>)labels.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())); 
+			Map<String, Long> labelCountMaps = (Map<String, Long>)labels.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+			Map<String, Long> distinctLabelCountMaps = (Map<String, Long>)distinctLabels.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())); 
 			dd.setLabelCountMap(labelCountMaps);
+			dd.setDistinctLabelCountMap(distinctLabelCountMaps);
 
 			labelCountMaps.forEach((key,value) -> {
 				if(!"O".equalsIgnoreCase(key)) {
 					dd.getLabelCounts().add((Long)value);
 					dd.getLabels().add((String)key);
+				}
+			});
+			distinctLabelCountMaps.forEach((key,value) -> {
+				if(!"O".equalsIgnoreCase(key)) {
+					dd.getDistinctLabelCounts().add((Long)value);
+					//dd.getLabels().add((String)key);
 				}
 			});
 			res.setData(dd);

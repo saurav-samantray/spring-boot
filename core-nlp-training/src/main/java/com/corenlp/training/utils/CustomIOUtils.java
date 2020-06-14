@@ -7,7 +7,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -38,6 +41,26 @@ public class CustomIOUtils {
 				continue;
 			}
 			results.add(values[position]);
+		}
+		return results;
+	}
+	
+	public static  List<String> getDistinctLabelCountFromCSV(String path, int position,String split) throws IOException {
+		List<String> results = new ArrayList<>();
+		Map<String,List> labelMap = new HashMap<>();
+		for (String line : IOUtils.readLines(path)) {
+			String[] values = line.split(split);
+			if(values == null || values.length ==1) {
+				continue;
+			}
+			
+			if(labelMap.get(values[position]) == null || !labelMap.get(values[position]).contains(values[position-1])) {
+				if(labelMap.get(values[position-1]) == null) {
+					labelMap.put(values[position], Arrays.asList(new String[] {values[position-1] }));
+				}
+				results.add(values[position]);
+			}
+			
 		}
 		return results;
 	}
